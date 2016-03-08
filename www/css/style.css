@@ -8,3 +8,7 @@
   background-size: cover;
   /*background-color: url("../img/bandeau-haut.jpg");*/
 }
+
+a{
+  text-decoration: none;
+}
