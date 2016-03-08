@@ -35,16 +35,6 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
     url: '/forgotPassword',
       templateUrl: 'templates/forgotPassword.html'
   })
-// register
-  .state('register', {
-    url: '/register',
-      templateUrl: 'templates/register.html'
-  })
-// registers
-  .state('registers', {
-    url: '/registers/:prenom/:nom',
-      templateUrl: 'templates/registers.html'
-  })
 // home
 .state('home', {
   url: '/home',

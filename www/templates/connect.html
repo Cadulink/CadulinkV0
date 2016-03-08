@@ -13,7 +13,9 @@
 			</label>
 		</div>
 		<a ui-sref="home" class="button button-positive button-block">Se connecter</a>
-		<a href="#/register" class="button button-positive button-block">S'inscrire</a>
+		<div ng-controller="RegisterCtrl">
+			<a ng-click="OpenModal()" class="button button-positive button-block">S'inscrire</a>
+		</div>
 		<a ui-sref="forgotPassword">Mot de passe oublié</a>
 	</ion-content>
 </ion-view>
