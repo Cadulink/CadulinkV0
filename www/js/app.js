@@ -81,18 +81,18 @@ $stateProvider.state('photo', {
     templateUrl: 'templates/photo.html'
 })
 
-//Modification de Profil
-// $stateProvider.state('profilModif', {
-//   url: '/profilModif',
-//   templateUrl: 'templates/profilModif.html'
-// })
+// Modification de Profil
+$stateProvider.state('profilModif', {
+  url: '/profilModif',
+  templateUrl: 'templates/profilModif.html'
+})
 
 // Mon Profil
-// $stateProvider.state('monProfil', {
-//   url: '/monProfil',
-//   templateUrl: 'templates/monProfil.html'
-// })
+$stateProvider.state('monProfil', {
+  url: '/monProfil',
+  templateUrl: 'templates/monProfil.html'
+})
 
-  $urlRouterProvider.otherwise('/connect')
+  $urlRouterProvider.otherwise('/monProfil')
 
 });
