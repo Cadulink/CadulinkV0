@@ -1,0 +1,18 @@
+<ion-view view-title="Sélectionnez votre profil">
+	<ion-content ng-controller="RegistersCtrl">
+		<ion-list>
+			<ion-item  ng-controller="ModalOneCtrl" class="item-button-right">
+				{{prenom +' '+ nom}}
+				<button ng-click="OpenModal()" class="button button-positive">S'inscrire</button>
+			</ion-item>
+			<ion-item ng-controller="ModalTwoCtrl" class="item-button-right">
+				Mon nom n'apparaît pas
+				<button ng-click="OpenModal()" class="button button-positive">S'inscrire</button>
+			</ion-item>
+			<ion-item ng-controller="ModalThreeCtrl" class="item-button-right">
+				Vous êtes étudiant
+				<button ng-click="OpenModal()" class="button button-positive">S'inscrire</button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+</ion-view>
