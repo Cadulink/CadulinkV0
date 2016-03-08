@@ -80,6 +80,19 @@ $stateProvider.state('photo', {
   url: '/photo',
     templateUrl: 'templates/photo.html'
 })
-  $urlRouterProvider.otherwise('/connect')
+
+//Modification de Profil
+$stateProvider.state('profilModif', {
+  url: '/profilModif',
+  templateUrl: 'templates/profilModif.html'
+})
+
+// Mon Profil
+$stateProvider.state('monProfil', {
+  url: '/monProfil',
+  templateUrl: 'templates/monProfil.html'
+})
+
+  $urlRouterProvider.otherwise('/monProfil')
 
 });
