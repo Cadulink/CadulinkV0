@@ -16,3 +16,28 @@ a{
 .none {
     text-decoration: none;
 }
+.bar-positive .button {
+	border-color: #0c60ee;
+}
+
+#dateDeNaissance {
+	color: rgba(0,0,0,0.4);
+    font-size: 15px;
+}
+
+#jour,
+#mois,
+#annee {
+	margin-right: 15px;
+}
+
+form.register div.date {
+	height: 47px;
+}
+
+form.register div.date,
+form.register label {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+>>>>>>> origin/jordan
