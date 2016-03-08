@@ -1,5 +1,8 @@
 angular.module('starter.controllers', [])
 
+
+
+
 .controller('ModalOneCtrl', function($scope, $ionicModal, $timeout) {
 
   $scope.profil = {};
