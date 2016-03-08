@@ -39,7 +39,47 @@ angular.module('starter', ['ionic', 'ngCordova'])
     url: '/forgotPassword',
       templateUrl: 'templates/forgotPassword.html'
   })
+// register
+  $stateProvider.state('register', {
+    url: '/register',
+      templateUrl: 'templates/register.html'
+  })
+// home
+$stateProvider.state('home', {
+  url: '/home',
+    templateUrl: 'templates/home.html'
+})
 
+// community
+$stateProvider.state('community', {
+  url: '/community',
+    templateUrl: 'templates/community.html'
+})
+// article
+$stateProvider.state('article', {
+  url: '/article',
+    templateUrl: 'templates/article.html'
+})
+// agenda
+$stateProvider.state('agenda', {
+  url: '/agenda',
+    templateUrl: 'templates/agenda.html'
+})
+// messenger
+$stateProvider.state('messenger', {
+  url: '/messenger',
+    templateUrl: 'templates/messenger.html'
+})
+// profil
+$stateProvider.state('profil', {
+  url: '/profil',
+    templateUrl: 'templates/profil.html'
+})
+// photo api
+$stateProvider.state('photo', {
+  url: '/photo',
+    templateUrl: 'templates/photo.html'
+})
   $urlRouterProvider.otherwise('/connect')
 
 });
