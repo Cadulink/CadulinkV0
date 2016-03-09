@@ -6,7 +6,7 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <form ng-submit="submit(email, password, nom, prenom, profession, lieuExercice)" class="register">
+        <form ng-submit="submit(email, password, lastName, firstName, profession, practiceLocation)" class="register">
             <label class="item item-input">
                 <input type="email" placeholder="Email*" ng-model="email" required>
             </label>
@@ -14,16 +14,16 @@
                 <input type="password" placeholder="Mot de passe*" ng-model="paswword" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Nom*" ng-model="nom" required>
+                <input type="text" placeholder="Nom*" ng-model="lastName" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Prénom*" ng-model="prenom" required>
+                <input type="text" placeholder="Prénom*" ng-model="firstName" required>
             </label>
             <label class="item item-input">
                 <input type="text" placeholder="Profession*" ng-model="profession" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Lieu d'exercice*" ng-model="lieuExercice" required>
+                <input type="text" placeholder="Lieu d'exercice*" ng-model="practiceLocation" required>
             </label>
             <div class="item item-button-right" style="padding-left: 10px;">
                 <p style="color: rgba(0,0,0,0.3);">Photo*</p>

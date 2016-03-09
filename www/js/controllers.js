@@ -16,15 +16,15 @@ angular.module('starter.controllers', [])
     $scope.modal.hide();
   };
 
-  $scope.submit = function(email, password, nom, prenom, profession, lieuExercice){
+  $scope.submit = function(email, password, lastName, firstName, profession, practiceLocation){
 
     var perso = {
       'email': email,
       'password': password,
-      'nom': nom,
-      'prenom': prenom,
+      'lastName': lastName,
+      'firstName': firstName,
       'profession': profession,
-      'lieuExercice': lieuExercice
+      'practiceLocation': practiceLocation
     };
 
     window.localStorage.setItem('perso', JSON.stringify(perso));
