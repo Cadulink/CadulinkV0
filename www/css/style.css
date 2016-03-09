@@ -24,8 +24,6 @@
 }
 
 .ion-android-camera {
-
-
 }
 
 .center-text {
@@ -43,6 +41,7 @@ a{
   border-color: #0c60ee;
 }
 
+
 #dateDeNaissance {
   color: rgba(0,0,0,0.4);
   font-size: 15px;
@@ -53,6 +52,7 @@ a{
 #annee {
   margin-right: 15px;
 }
+
 
 form.register div.date {
   height: 47px;
