@@ -6,30 +6,30 @@
         </div>
     </ion-header-bar>
     <ion-content>
-        <form ng-submit="" class="register">
+        <form ng-submit="submit(email, password, nom, prenom, profession, lieuExercice)" class="register">
             <label class="item item-input">
-                <input type="email" placeholder="Email*" required>
+                <input type="email" placeholder="Email*" ng-model="email" required>
             </label>
             <label class="item item-input">
-                <input type="password" placeholder="Mot de passe*" required>
+                <input type="password" placeholder="Mot de passe*" ng-model="paswword" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Nom*" required>
+                <input type="text" placeholder="Nom*" ng-model="nom" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Prénom*" required>
+                <input type="text" placeholder="Prénom*" ng-model="prenom" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Profession*" required>
+                <input type="text" placeholder="Profession*" ng-model="profession" required>
             </label>
             <label class="item item-input">
-                <input type="text" placeholder="Lieu d'exercice*" required>
+                <input type="text" placeholder="Lieu d'exercice*" ng-model="lieuExercice" required>
             </label>
             <div class="item item-button-right" style="padding-left: 10px;">
                 <p style="color: rgba(0,0,0,0.3);">Photo*</p>
                 <label class="button button-positive" style="right: 75px;">
                     <i class="icon ion-android-image"></i>
-                    <input type="file" hidden required>
+                    <input type="file" hidden>
                 </label>
                 <label class="button button-positive">
                     <i class="icon ion-android-camera"></i>
