@@ -144,6 +144,6 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
 var communities = [{ id: 1, label: "dentiste", communityManagerId: 2 },
 { id: 2, label: "Médecin", communityManagerId: 1 },{id: 3, label: "Infirmière", communityManagerId: 3 },
- {id: 3, label: "Kinésithérapeute", communityManagerId: 3 } ];
+ {id: 4, label: "Kinésithérapeute", communityManagerId: 4 } ];
 
 window.localStorage.setItem("communuties", JSON.stringify(communities))
