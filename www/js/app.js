@@ -141,3 +141,9 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 });
 
 // fin de la fonction photo
+
+var communities = [{ id: 1, label: "dentiste", communityManagerId: 2 },
+{ id: 2, label: "Médecin", communityManagerId: 1 },{id: 3, label: "Infirmière", communityManagerId: 3 },
+ {id: 3, label: "Kinésithérapeute", communityManagerId: 3 } ];
+
+window.localStorage.setItem("communuties", JSON.stringify(communities))
