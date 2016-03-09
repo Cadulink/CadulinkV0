@@ -1,13 +1,44 @@
-<ion-view view-title="S'inscrire">
-	<ion-content padding="true" ng-controller="RegisterCtrl">
-		<form class="list list-inset" ng-submit="submit(prenom, nom)">
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Inscrition</h1>
+    <div class="buttons">
+      <a ui-sref="connect" class="button button-clear">Close</a>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="" class="register">
 			<label class="item item-input">
-			    <input type="text" name="prenom" ng-model="prenom" placeholder="Prénom" required>
+				<input type="email" placeholder="Email*" required>
 			</label>
 			<label class="item item-input">
-				<input type="text" name="nom" ng-model="nom" placeholder="Nom" required>
+				<input type="password" placeholder="Password*" required>
 			</label>
-			<input type="submit" value="Continuer" class="button button-block button-positive">
-		</form>
-	</ion-content>
-</ion-view>
+      <label class="item item-input">
+        <input type="text" placeholder="Nom*" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Prénom" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Profession*" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Lieu d'exercice*" required>
+      </label>
+      <div class="item item-button-right" style="padding-left: 10px;">
+        <p style="color: rgba(0,0,0,0.3);">Photo*</p>
+        <label class="button button-positive" style="right: 75px;">
+          <i class="icon ion-android-image"></i>
+          <input type="file" hidden required>
+        </label>
+        <label class="button button-positive">
+          <i class="icon ion-android-camera"></i>
+        </label>
+      </div>
+			<div class="button-bar bar-positive padding">
+				<button class="button">Valider</button>
+				<button class="button" ng-click="CloseModal()">Annuler</button>
+			</div>
+    </form>
+  </ion-content>
+</ion-modal-view>

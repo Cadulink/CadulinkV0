@@ -38,6 +38,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     url: '/forgotPassword',
       templateUrl: 'templates/forgotPassword.html'
   })
+
 // register
   .state('register', {
     url: '/register',
