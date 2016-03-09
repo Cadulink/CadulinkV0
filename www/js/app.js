@@ -3,11 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova'])
-
-
-
-
+var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
 
 
 .run(function($ionicPlatform) {
@@ -28,58 +24,101 @@ angular.module('starter', ['ionic', 'ngCordova'])
   });
 })
 
+
+
 .config(function($stateProvider, $urlRouterProvider) {
 // connection
-  $stateProvider.state('connect', {
+  $stateProvider
+  .state('connect', {
     url: '/connect',
     templateUrl: 'templates/connect.html'
   })
 // mots de passe oublié
-  $stateProvider.state('forgotPassword', {
+  .state('forgotPassword', {
     url: '/forgotPassword',
       templateUrl: 'templates/forgotPassword.html'
   })
 // register
-  $stateProvider.state('register', {
+  .state('register', {
     url: '/register',
       templateUrl: 'templates/register.html'
   })
+
 // home
-$stateProvider.state('home', {
+.state('home', {
   url: '/home',
     templateUrl: 'templates/home.html'
 })
 
 // community
-$stateProvider.state('community', {
+.state('community', {
   url: '/community',
     templateUrl: 'templates/community.html'
 })
 // article
-$stateProvider.state('article', {
+.state('article', {
   url: '/article',
     templateUrl: 'templates/article.html'
 })
 // agenda
-$stateProvider.state('agenda', {
+.state('agenda', {
   url: '/agenda',
     templateUrl: 'templates/agenda.html'
 })
 // messenger
-$stateProvider.state('messenger', {
+.state('messenger', {
   url: '/messenger',
     templateUrl: 'templates/messenger.html'
 })
 // profil
-$stateProvider.state('profil', {
+.state('profil', {
   url: '/profil',
     templateUrl: 'templates/profil.html'
 })
 // photo api
-$stateProvider.state('photo', {
+.state('photo', {
   url: '/photo',
     templateUrl: 'templates/photo.html'
+});
+
+//Modification de Profil
+$stateProvider.state('profilModif', {
+  url: '/profilModif',
+  templateUrl: 'templates/profilModif.html'
 })
+
+// Mon Profil
+$stateProvider.state('monProfil', {
+  url: '/monProfil',
+  templateUrl: 'templates/monProfil.html'
+})
+
   $urlRouterProvider.otherwise('/connect')
 
 });
+// fonction appareil photo
+exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
+
+    $scope.takePicture = function() {
+        var options = {
+            quality : 75,
+            destinationType : Camera.DestinationType.DATA_URL,
+            sourceType : Camera.PictureSourceType.CAMERA,
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            // An error occured. Show a message to the user
+        });
+    }
+
+});
+
+// fin de la fonction photo

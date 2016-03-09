@@ -1,0 +1,13 @@
+<ion-view view-title="S'inscrire">
+	<ion-content padding="true" ng-controller="RegisterCtrl">
+		<form class="list list-inset" ng-submit="submit(prenom, nom)">
+			<label class="item item-input">
+			    <input type="text" name="prenom" ng-model="prenom" placeholder="Prénom" required>
+			</label>
+			<label class="item item-input">
+				<input type="text" name="nom" ng-model="nom" placeholder="Nom" required>
+			</label>
+			<input type="submit" value="Continuer" class="button button-block button-positive">
+		</form>
+	</ion-content>
+</ion-view>
