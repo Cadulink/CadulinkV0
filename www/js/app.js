@@ -358,4 +358,3 @@ var communities = [{ id: 1, label: "dentiste", communityManagerId: 2 },
  {id: 4, label: "Kinésithérapeute", communityManagerId: 4 } ];
 
 window.localStorage.setItem("communuties", JSON.stringify(communities))
->>>>>>> 7989b3b00e11a8e3ffbdb77a22698eba86087a16
