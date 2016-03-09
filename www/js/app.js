@@ -43,11 +43,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     url: '/register',
       templateUrl: 'templates/register.html'
   })
-// registers
-  .state('registers', {
-    url: '/registers/:prenom/:nom',
-      templateUrl: 'templates/registers.html'
-  })
+
 // home
 .state('home', {
   url: '/home',
@@ -84,10 +80,23 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
   url: '/photo',
     templateUrl: 'templates/photo.html'
 });
+
+//Modification de Profil
+$stateProvider.state('profilModif', {
+  url: '/profilModif',
+  templateUrl: 'templates/profilModif.html'
+})
+
+// Mon Profil
+$stateProvider.state('monProfil', {
+  url: '/monProfil',
+  templateUrl: 'templates/monProfil.html'
+})
+
   $urlRouterProvider.otherwise('/connect')
 
 });
-
+// fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
     $scope.takePicture = function() {
@@ -111,3 +120,5 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
     }
 
 });
+
+// fin de la fonction photo

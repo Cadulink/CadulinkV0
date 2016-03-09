@@ -1,12 +1,35 @@
 /* Empty. Add your own CSS if you like */
-.spacer{
-  height: 60px;
+  .spacer {
+    height: 60px
+  }
+
+  .item-medium {
+width:80%;
+height:50%;
 }
+
+.spacerVic{
+  height: 40px;
+}
+
 .scroll-content{
-  background-image: url("../img/home-bckg.jpg");
+  background-image: url("img/home-bckg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /*background-color: url("../img/bandeau-haut.jpg");*/
+}
+
+.blue {
+color:#387ef5
+}
+
+.ion-android-camera {
+
+
+}
+
+.center-text {
+  text-align: center;
 }
 
 a{
