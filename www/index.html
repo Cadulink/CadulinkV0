@@ -16,6 +16,7 @@
   <script src="lib/ionic/js/ionic.bundle.js"></script>
   <!-- ngCordova -->
   <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+  <script src="js/ng-cordova.min.js"></script>
   <!-- cordova script (this will be a 404 during development) -->
   <script src="cordova.js"></script>
 
@@ -24,6 +25,7 @@
   <script src="js/controllers.js"></script>
   </head>
   <body ng-app="starter">
+
 
 
     <ion-side-menus>
@@ -35,7 +37,7 @@
        </ion-side-menu-content>
        <ion-side-menu side="right">
          <ion-list>
-           <ion-item menu-close="" ui-sref="newsFeed" class="positive">
+           <ion-item menu-close="" ui-sref="home" class="positive">
              Accueil
            </ion-item>
            <ion-item menu-close="" ui-sref="Categories" class="positive">
@@ -44,8 +46,18 @@
            <ion-item menu-close="" ui-sref="Application" class="positive">
              Application
            </ion-item>
+           <ion-item menu-close="" ui-sref="photo" class="positive">
+            Photo
+           </ion-item>
+           <ion-item menu-close="" ui-sref="monProfil" class="positive">
+            Mon profil
+           </ion-item>
+           <ion-item menu-close="" ui-sref="post" class="positive">
+            Ecrire un article
+           </ion-item>
          </ion-list>
        </ion-side-menu>
      </ion-side-menus>
+
    </body>
 </html>

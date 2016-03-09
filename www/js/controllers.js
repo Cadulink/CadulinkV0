@@ -2,6 +2,7 @@ angular.module('starter.controllers', [])
 
 .controller('RegisterCtrl', function($scope, $ionicModal, $timeout) {
 
+
   $ionicModal.fromTemplateUrl('templates/register.html', {
     scope: $scope
   }).then(function(modal) {
@@ -32,13 +33,3 @@ angular.module('starter.controllers', [])
   };
 
 })
-
-/*.controller('RegisterCtrl', function($scope, $ionicLoading, $state, $location){
-  $scope.submit = function(prenom, nom){
-    $ionicLoading.show({
-      template: '<ion-spinner icon="android"></ion-spinner>',
-      duration: 1500
-    });
-    $state.go('registers', {prenom: prenom, nom: nom});
-  }
-})*/

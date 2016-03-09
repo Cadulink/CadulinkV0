@@ -3,7 +3,8 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
+var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
+
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -23,6 +24,8 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
   });
 })
 
+
+
 .config(function($stateProvider, $urlRouterProvider) {
 // connection
   $stateProvider
@@ -35,6 +38,13 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
     url: '/forgotPassword',
       templateUrl: 'templates/forgotPassword.html'
   })
+
+// register
+  .state('register', {
+    url: '/register',
+      templateUrl: 'templates/register.html'
+  })
+
 // home
 .state('home', {
   url: '/home',
@@ -71,6 +81,63 @@ angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
   url: '/photo',
     templateUrl: 'templates/photo.html'
 });
+
+//Modification de Profil
+$stateProvider.state('profilModif', {
+  url: '/profilModif',
+  templateUrl: 'templates/profilModif.html'
+})
+
+// Mon Profil
+$stateProvider.state('monProfil', {
+  url: '/monProfil',
+  templateUrl: 'templates/monProfil.html'
+})
+
+// Profil Cadulink
+  .state('CaduProfil', {
+    url: '/CaduProfil',
+      templateUrl: 'templates/CaduProfil.html'
+  })
+
+// Profil Communauté
+$stateProvider.state('CommunityDm', {
+  url: '/CommunityDm',
+  templateUrl: 'templates/CommunityDm.html'
+})
+
+// Post un article
+  .state('post', {
+    url: '/post',
+      templateUrl: 'templates/post.html'
+  })
+
   $urlRouterProvider.otherwise('/connect')
 
 });
+// fonction appareil photo
+exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
+
+    $scope.takePicture = function() {
+        var options = {
+            quality : 75,
+            destinationType : Camera.DestinationType.DATA_URL,
+            sourceType : Camera.PictureSourceType.CAMERA,
+            allowEdit : true,
+            encodingType: Camera.EncodingType.JPEG,
+            targetWidth: 300,
+            targetHeight: 300,
+            popoverOptions: CameraPopoverOptions,
+            saveToPhotoAlbum: false
+        };
+
+        $cordovaCamera.getPicture(options).then(function(imageData) {
+            $scope.imgURI = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            // An error occured. Show a message to the user
+        });
+    }
+
+});
+
+// fin de la fonction photo
