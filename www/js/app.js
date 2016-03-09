@@ -94,6 +94,12 @@ $stateProvider.state('monProfil', {
   templateUrl: 'templates/monProfil.html'
 })
 
+// Profil Cadulink
+  .state('CaduProfil', {
+    url: '/CaduProfil',
+      templateUrl: 'templates/CaduProfil.html'
+  })
+
 // Profil Communauté
 $stateProvider.state('CommunityDm', {
   url: '/CommunityDm',
