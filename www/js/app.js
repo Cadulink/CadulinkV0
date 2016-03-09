@@ -106,6 +106,12 @@ $stateProvider.state('CommunityDm', {
   templateUrl: 'templates/CommunityDm.html'
 })
 
+// Post un article
+  .state('post', {
+    url: '/post',
+      templateUrl: 'templates/post.html'
+  })
+
   $urlRouterProvider.otherwise('/connect')
 
 });
