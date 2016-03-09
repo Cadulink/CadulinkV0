@@ -1,0 +1,46 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Vous êtes étudiant</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="CloseModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="" class="register">
+      <label class="item item-input">
+          <input type="text" name="prenom" ng-model="prenom" placeholder="Prénom" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" name="nom" ng-model="nom" placeholder="Nom" required>
+      </label>
+      <div class="date item item-input" ng-controller="DateCtrl">
+        <span id="dateDeNaissance" class="padding-right">Date de naissance</span>
+        <select id="jour"  class="">
+          <option>Jour</option>
+          <option ng-repeat="jour in day">{{jour}}</option>
+        </select>
+        <select id="mois" class="">
+          <option>Mois</option>
+          <option ng-repeat="mois in month">{{mois}}</option>
+        </select>
+        <select id="annee" class="">
+          <option>Année</option>
+          <option ng-repeat="annee in years">{{annee}}</option>
+        </select>
+      </div>
+      <label class="item item-input">
+        <input type="text" placeholder="Numéro d'identité (RPPS, ADELI, INE, INAMI, GLN...)" required>
+      </label>
+      <label class="item item-input">
+        <input type="email" placeholder="Email*" required>
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Nom et lieu de la faculté*" required>
+      </label>
+      <div class="button-bar bar-positive padding">
+        <button class="button">Valider</button>
+        <button class="button" ng-click="CloseModal()">Annuler</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
