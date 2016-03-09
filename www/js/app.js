@@ -51,9 +51,9 @@ $stateProvider.state('home', {
 })
 
 // community
-$stateProvider.state('CommunityDm', {
-  url: '/CommunityDm',
-    templateUrl: 'templates/CommunityDm.html'
+$stateProvider.state('community', {
+  url: '/community',
+    templateUrl: 'templates/community.html'
 })
 // article
 $stateProvider.state('article', {
@@ -80,6 +80,6 @@ $stateProvider.state('photo', {
   url: '/photo',
     templateUrl: 'templates/photo.html'
 })
-  $urlRouterProvider.otherwise('/CommunityDm')
+  $urlRouterProvider.otherwise('/connect')
 
 });
