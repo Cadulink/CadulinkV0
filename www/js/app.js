@@ -112,6 +112,20 @@ $stateProvider.state('CommunityDm', {
       templateUrl: 'templates/post.html'
   })
 
+// article
+  .state('article', {
+    url: '/article:id',
+      templateUrl: 'templates/article.html',
+        controller: 'articleCtrl'
+})
+
+// communauté
+  .state('CommunityDm', {
+    url: '/communities:id',
+      templateUrl: 'templates/CommunityDm.html',
+        controller: 'communitiesCtrl'
+})
+
   $urlRouterProvider.otherwise('/connect')
 
 });
