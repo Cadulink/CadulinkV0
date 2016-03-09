@@ -93,6 +93,12 @@ $stateProvider.state('monProfil', {
   templateUrl: 'templates/monProfil.html'
 })
 
+// Profil Communauté
+$stateProvider.state('CommunityDm', {
+  url: '/CommunityDm',
+  templateUrl: 'templates/CommunityDm.html'
+})
+
   $urlRouterProvider.otherwise('/connect')
 
 });
