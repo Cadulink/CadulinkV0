@@ -1,0 +1,73 @@
+<ion-view view-title="CommunityP">
+<ion-content padding="true">
+  <ion-list>
+        <ion-item ng-repeat="communityP in communityP" class="item item-icon-right">
+          <span ng-class="{done: communityP.done}">{{communityP.title}}</span>
+        </ion-item>
+      </ion-list>
+  <div class="card">
+   <div class="item item-avatar">
+      <img src="img/caducee.jpg">
+      <h2>Médecin</h2>
+      <p> - Communautée rassemblant <br>les médecins généraliste</p>
+   </div>
+
+   <div class="item item-body">
+     <em><p>Communautés liées :</p></em>
+     <ul>
+       <li>Infirmieres</li>
+       <li>Pharmaciens</li>
+     </ul>
+    </div>
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/access.jpeg">
+        <a ui-sref="CaduProfil">Cadulink</a>
+        <a href="#" class="none">La santé connectée pour les pharmaciens ?</a><br>
+        <span>Catégorie :</span>  <a href="#" class="none">Pharmacien</a>
+        <p>20 fevrier 2016</p>
+      </div>
+      <div class="item item-body">
+        <p>
+Pour faire de la santé connectée un succès en pharmacie, il faut que ce nouveau champ apporte d’abord la preuve de son bénéfice. Plusieurs points stratégiques doivent être remplis : 1) La fiabilité technique 2) La gestion des données de santé 3) La certification des objets connectés 4) La sécurisati...
+        </p>
+        <p>
+          <a href="#" class="subdued">S'abonner</a>
+          <a href="#" class="subdued">Commenter</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="list card">
+      <div class="item item-avatar">
+        <img src="img/access.jpeg">
+        <a ui-sref="profil">Cadulink</a>
+        <a href="#" class="none">Lettre du Président de la CARMF Dr LARDENOIS Thierry</a><br>
+
+
+        <p>20 fevrier 2016</p>
+      </div>
+
+      <div class="item item-body">
+        <a href="#"><img class="full-image" src="img/lettrecarmf.jpeg"> </a>
+        <p>
+
+        </p>
+        <p>
+          <a href="#" class="subdued">S'abonner</a>
+          <a href="#" class="subdued">Commenter</a>
+        </p>
+      </div>
+    </div>
+
+
+    <div class="item item-avatar">
+      <img src="img/SVelluz.jpg">
+       <p>Animateur : </p>
+
+       <h2>Sebastien VELLUZ</h2>
+    </div>
+
+</div>
+</ion-content>
+</ion-view>

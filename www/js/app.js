@@ -105,6 +105,12 @@ $stateProvider.state('CommunityDm', {
   templateUrl: 'templates/CommunityDm.html'
 })
 
+// comunityPage
+$stateProvider.state('communityPage', {
+  url: '/communityPage',
+  templateUrl: 'templates/communityPage.html'
+})
+
 // Post un article
   .state('post', {
     url: '/post',
