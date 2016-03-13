@@ -10,7 +10,7 @@
                 </div>
                 <div class="item item-avatar">
                     <img src="img/sebatien.jpg">
-                    <a ui-sref="profil">par {{getAuthor(article)}}</a>
+                    <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
                     <p>le {{article.date}}</p>
                 </div>
                 <div class="item item-body">

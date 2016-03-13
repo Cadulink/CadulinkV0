@@ -1,13 +1,20 @@
 angular.module('starter.controllers', [])
 
 //Articles pages
-.controller('ArticlesCtrl', function($scope) {
+.controller('ArticlesCtrl', function($scope, ArticleService) {
     $scope.articles = JSON.parse(window.localStorage.getItem('articles'));
     $scope.people = JSON.parse(window.localStorage.getItem('people'));
 
     $scope.getAuthor = function(article) {
-        return people[article.authorId].firstName + " " + people[article.authorId].lastName;
+        var person =  ArticleService.getAuthor(article.authorId);
+        return person.firstName + " " + person.lastName;
     };
+})
+
+//Profile pages
+.controller('ProfilCtrl', function($scope, $stateParams, ProfilService) {
+    console.log($stateParams.personId);
+    $scope.person = ProfilService.get($stateParams.personId);
 })
 
 //Register page
@@ -42,6 +49,7 @@ angular.module('starter.controllers', [])
       'practiceLocation': practiceLocation
     });
 
+    window.localStorage.setItem('userId', JSON.stringify(people.length));
     window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
     $location.path('home');
