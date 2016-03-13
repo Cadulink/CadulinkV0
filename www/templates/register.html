@@ -1,44 +1,43 @@
 <ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Inscrition</h1>
-    <div class="buttons">
-      <a ui-sref="connect" class="button button-clear">Close</a>
-    </div>
-  </ion-header-bar>
-  <ion-content>
-    <form ng-submit="" class="register">
-			<label class="item item-input">
-				<input type="email" placeholder="Email*" required>
-			</label>
-			<label class="item item-input">
-				<input type="password" placeholder="Password*" required>
-			</label>
-      <label class="item item-input">
-        <input type="text" placeholder="Nom*" required>
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Prénom" required>
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Profession*" required>
-      </label>
-      <label class="item item-input">
-        <input type="text" placeholder="Lieu d'exercice*" required>
-      </label>
-      <div class="item item-button-right" style="padding-left: 10px;">
-        <p style="color: rgba(0,0,0,0.3);">Photo*</p>
-        <label class="button button-positive" style="right: 75px;">
-          <i class="icon ion-android-image"></i>
-          <input type="file" hidden required>
-        </label>
-        <label class="button button-positive">
-          <i class="icon ion-android-camera"></i>
-        </label>
-      </div>
-			<div class="button-bar bar-positive padding">
-				<button class="button">Valider</button>
-				<button class="button" ng-click="CloseModal()">Annuler</button>
-			</div>
-    </form>
-  </ion-content>
+    <ion-header-bar>
+        <h1 class="title">Inscription</h1>
+        <div class="buttons">
+            <button class="button button-clear" ng-click="CloseModal()">Close</button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="submit(email, password, lastName, firstName, profession, practiceLocation)" class="register">
+            <label class="item item-input">
+                <input type="email" placeholder="Email*" ng-model="email" required>
+            </label>
+            <label class="item item-input">
+                <input type="password" placeholder="Mot de passe*" ng-model="paswword" required>
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Nom*" ng-model="lastName" required>
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Prénom*" ng-model="firstName" required>
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Profession*" ng-model="profession" required>
+            </label>
+            <label class="item item-input">
+                <input type="text" placeholder="Lieu d'exercice*" ng-model="practiceLocation" required>
+            </label>
+            <div class="item item-button-right" style="padding-left: 10px;">
+                <p style="color: rgba(0,0,0,0.3);">Photo*</p>
+                <label class="button button-positive" style="right: 75px;">
+                    <i class="icon ion-android-image"></i>
+                    <input type="file" hidden>
+                </label>
+                <label class="button button-positive">
+                    <i class="icon ion-android-camera"></i>
+                </label>
+            </div>
+            <div class="button-bar bar-positive padding">
+                <button class="button">Valider</button>
+            </div>
+        </form>
+    </ion-content>
 </ion-modal-view>
