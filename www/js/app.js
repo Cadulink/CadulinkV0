@@ -133,13 +133,13 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
 // fin de la fonction photo
 
-var article = [
+var articles = [
   {
     id:1,
     communityId:1,
     authorId: 2,
-    title:"<h1>Un test salivaire pour détecter le cancer : info ou intox ?</h1>",
-    content: "<p>Si la découverte se confirme, elle pourrait révolutionner le dépistage du cancer. Des scientifiques sont en train de développer un test salivaire utilisable à domicile permettant de détecter la présence d'un cancer en une dizaine de minutes, rapporte le Telegraph. Ce test salivaire serait précis à 100% et si simple à utiliser qu'il pourrait être mis en vente libre en pharmacie.Une simple goutte de salive en guise de test</br>Selon David Wong, un professeur d'oncologie à l'université de Californie, il est possible de détecter des tumeurs lorsqu'elles circulent dans les fluides corporels. Les tests menés par ce scientifique ont démontré qu'une simple goutte de salive contient assez de données pour permettre d'établir un diagnostic dès le début du développement de la tumeur, assure-t-il. Actuellement, les scientifiques ne peuvent utiliser que les tests sanguins pour détecter un cancer, s'ils ont déjà effectué une biopsie pour repérer une tumeur.</br>'Détecter le cancer le plus tôt possible est crucial. Avec ce test, cela peut-être fait par le patient lui-même, chez lui, chez le dentiste, ou en pharmacie', souligne encore David Wong, qui espère voir le test arriver en Grande-Bretagne dans la décennie, voire plus tôt.</p> ",
+    title:"Un test salivaire pour détecter le cancer : info ou intox ?",
+    content: "<p>Si la decouverte se confirme, elle pourrait revolutionner le depistage du cancer. Des scientifiques sont en train de developper un test salivaire utilisable a domicile permettant de detecter la presence d'un cancer en une dizaine de minutes, rapporte le Telegraph. Ce test salivaire serait precis a 100% et si simple a utiliser qu'il pourrait etre mis en vente libre en pharmacie.Une simple goutte de salive en guise de test</br>Selon David Wong, un professeur d'oncologie a l'universite de Californie, il est possible de detecter des tumeurs lorsqu'elles circulent dans les fluides corporels. Les tests menes par ce scientifique ont demontre qu'une simple goutte de salive contient assez de donnees pour permettre d'etablir un diagnostic des le debut du developpement de la tumeur, assure-t-il. Actuellement, les scientifiques ne peuvent utiliser que les tests sanguins pour detecter un cancer, s'ils ont deja effectue une biopsie pour reperer une tumeur.</br>'Detecter le cancer le plus tot possible est crucial. Avec ce test, cela peut-etre fait par le patient lui-meme, chez lui, chez le dentiste, ou en pharmacie', souligne encore David Wong, qui espere voir le test arriver en Grande-Bretagne dans la decennie, voire plus tot.</p> ",
     picture:'',
     date: "19/05/2016"
   },
@@ -147,7 +147,7 @@ var article = [
     id:2,
     communityId:2,
     authorId: 2,
-    title:"<h1>Le sens de l'orientation pourrait être lié à la testostérone</h1>",
+    title:"Le sens de l'orientation pourrait être lié à la testostérone",
     content:"Lors d'un trajet en voiture ou dans un centre commercial, certains hommes aiment bien prendre les choses en main. Dans ce cas, les femmes se fient à leur sens de l'orientation.</br>"+
     "Pour ceux qui se reconnaissent dans cette scène, pas la peine de pavoiser, les hommes n'auraient en fait aucun mérite, tout ne serait qu'une question d'hormone sexuelle mâle.</br>"+
     "Pour parvenir à cette conclusion, une équipe de scientifiques de l'Université norvégienne de sciences et de technologie (NTNU) a demandé à un groupe de 18 hommes et 18 femmes de retrouver leur chemin dans un labyrinthe virtuel en utilisant des lunettes 3D et une manette. </br>"+
@@ -168,7 +168,7 @@ var article = [
     id:3,
     communityId:1,
     authorId:3,
-    title:"<h1>La santé connectée pour les pharmaciens ?</h1>",
+    title:"La santé connectée pour les pharmaciens ?",
     content:"<p>Pour faire de la santé connectée un succès en pharmacie, il faut que ce nouveau champ apporte d’abord la preuve de son bénéfice. Plusieurs points stratégiques doivent être remplis :</p>"+
     "<ol><li>La fiabilité technique</li><li>La gestion des données de santé</li><li>La certification des objets connectés</li><li>La sécurisation et le risque de piratage à distance</li><li>Un modèle économique fiable et rentable</li></ol>"+
     "<blockquote>« Le marché va être colossal, mais ce ne sera pas un marché d’objets, ce sera un marché de solutions santé, soutient Lionel Reichardt, lors d’une conférence organisée sur le sujet à Lyon (Rhône) le 9 novembre, à l'occasion du congrès annuel du groupement. L’objet n’est que du plastique. Ne vous enfermez pas dans une posture de vendeur de plastique car j’en connais un qui n’attendra pas deux jours pour dire « moi je n’ai pas le droit de vendre du médicament et eux ils vendent du plastique ». Le conseil est une dimension forte et indispensable dans ce domaine. Pour cela, il faudra évidemment que les pharmaciens soient à l’aise avec le matériel et les applications, ce qui signifie qu’ils soient un minimum utilisateurs. »</blockquote>"+
@@ -184,7 +184,7 @@ var article = [
     id:4,
     communityId:2,
     authorId:3,
-    title:"<h1>DEBAT : aujourd'hui grève des agents de la fonction publique hospitalière !</h1>",
+    title:"DEBAT : aujourd'hui grève des agents de la fonction publique hospitalière !",
     content:"<p>Soumis à un régime de rigueur depuis juillet 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</br>"+
     "Soumis à un régime de rigueur depuis juillet 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</p>"+
     "<h2>Les revendications</h2>"+
@@ -202,7 +202,7 @@ var article = [
     id:5,
     communityId:1,
     authorId:3,
-    title:"<h1>Alzheimer : voir la vieillesse en rose réduit le risque</h1>",
+    title:"Alzheimer : voir la vieillesse en rose réduit le risque",
     content:"<p>Un esprit sain dans un corps sain. Rabelais, et Juvénal avant lui, ont certainement compris l’intérêt d’allier le bien-être physique et psychique. Depuis, les scientifiques ont multiplié les travaux qui démontrent le bien fondé de ce précepte. La dernière étude en date, parue dans Psychology and Aging, abonde dans ce sens. Elle suggère que les personnes âgées qui voient positivement leur vieillissement sont moins à risque de développer la maladie d’Alzheimer.</p>"+
     "<p>Cette étude s’est déroulée en deux temps. D’abord, les chercheurs ont analysé les IRM cérébrales des participants à l’étude longitudinale sur le vieillissement de Baltimore (Maryland, Etats-Unis), qui a démarré en 1958. Leur objectif : déterminer les différences entre les personnes qui voient leur âge avancé positivement ou négativement.</p>"+
     "<p>Les volontaires qui apprécient de manière pessimiste le vieillissement affichent des changements cérébraux associés au développement d’une maladie d’Alzheimer. En effet, le volume de l’hippocampe recule davantage.</p>"+
@@ -233,7 +233,7 @@ var article = [
     id:7,
     communityId:1,
     authorId:3,
-    title:"<h1>Les dangers des appareils dentaires 'fait maison'</h1>",
+    title:"Les dangers des appareils dentaires 'fait maison'",
     content:"<p>« Un sourire de rêve en quelques semaines », « des dents bien alignées grâce à une technique maison», « une dentition parfaite sans frais de dentiste » ... telles sont les promesses que font certaines vidéos d'amateurs partagées sur le Web, et qui ont alerté la Fédération Française d'Orthodontie.</p>"+
     "</p>Celle-ci s'inquiète de ce phénomène de mode qui touche principalement les adolescents. Ces jeunes seraient de plus en plus nombreux à s'inspirer de tutoriels publiés sur Youtube pour fabriquer euxmêmes leur propre dispositif othodontique afin de redresser leurs dents."+
     "<h2>Des risques non anodins</h2>"+
@@ -251,7 +251,7 @@ var article = [
     id:8,
     communityId:2,
     authorId:4,
-    title:"<h1>Après le décès du quatrième patient, Carmat ne répond plus</h1>",
+    title:"Après le décès du quatrième patient, Carmat ne répond plus",
     content:"<p>Le 22 décembre dernier, dans la plus grande discrétion, une équipe de la Pitié-Salpêtrière implantait le cœur artificiel développé par l'entreprise Carmat sur un quatrième patient, âgé de 58 ans. 'Malgré tous les efforts de l’équipe, le patient est décédé de complications médicales non liées à la prothèse', précise le professeur Pascal Leprince, chef de Service à l'Institut de cardiologie de l'hôpital.</p>"+
     "<p>Le cœur artificiel ne serait donc pas à l'origine du décès du quinquagénaire. Un détail qui a son importance, alors que le deuxième patient ayant reçu le dispositif médical de Carmat était décédé subitement, une dérive fonctionnelle de la prothèse avait alors été pointée du doigt.</p>"+
     "<p>'Au terme de cet essai, le système Carmat cumule une expérience clinique de 21 mois de fonctionnement. Carmat prépare l’essai clinique pivot', se félicite la société dans le communiqué. Rien d'alarmant donc, à en croire le français. A 17h35 ce 21 janvier, le titre a même grimpé de 12,5% pour s'établir à 33,5 euros l'action.</p>"+
@@ -274,7 +274,7 @@ var article = [
     id:9,
     communityId:2,
     authorId:1,
-    title:"<h1>Infirmier(e) DE Cadre URGENT</h1>",
+    title:"Infirmier(e) DE Cadre URGENT",
     content:"<p>Nous recherchons pour notre client un(e) infirmier(e) diplômé(e) d'Etat Cadre ou Cadre de Santé dans le cadre d'un CDI à temps complet dans une structure récente d'environ 80 places sur Strasbourg.</p>"+
     "<p>En étroite collaboration avec le médecin, vos tâches seront de :</p>"+
     "<ul><li>- gérer une équipe pluridisciplinaires,</li><li>- organiser le planning,</li><li>- suivre les projets de la structure (animation, communication, etc..)</li>"+
@@ -290,7 +290,7 @@ var article = [
     id:10,
     communityId:1,
     authorId:2,
-    title:"<h1>Remplacement infirmier(e) liberal(e)</h1>",
+    title:"Remplacement infirmier(e) liberal(e)",
     content:"<p>Cabinet infirmier proche de Caen recherche remplaçant(e) pour 4 à 5 jours mensuels (un WE inclus). volume de remplacement plus important en juillet/aout. Poste à pourvoir de suite. Premier contact par mail.</p>",
     picture:'',
     date:"21/01/2016"
@@ -299,7 +299,7 @@ var article = [
     id:11,
     communityId:2,
     authorId:3,
-    title:"<h1>Infirmier de pratique avancée en oncologie : un besoin plus qu'urgent</h1>",
+    title:"Infirmier de pratique avancée en oncologie : un besoin plus qu'urgent",
     content:"<p>Les 8e Rencontres de la Cancérologie Française (RCFr), qui se sont tenues en décembre dernier à Paris, ont réuni patients et professionnels de santé autour d'une problématique importante : celle du parcours de soins en oncologie. Car en effet, de sa qualité dépend l'espérance de vie des patients ainsi que les probabilités de guérison.</p>"+
     "<p>Mais, pour optimiser ce parcours, encore faut-il une amélioration de la coordination des soins. Dans une telle démarche de qualité, il semble donc de plus en plus nécessaire que les fonctions d'infirmier en oncologie évolue vers de nouvelles responsabilités.</p>"+
     "<p>'Il reste beaucoup de dysfonctionnements dans le système. Pourtant, cela nous paraît essentiel qu'un lien efficace soit assuré dans les soins. Mais, pour cela, de nouvelles formations, de nouveaux métiers et de nouvelles compétences sont nécessaires, notamment pour les infirmiers. De fait, nous souhaitons une universitarisation de la profession infirmière afin qu'une pratique avancée soit enfin possible'</p>"+
@@ -314,7 +314,7 @@ var article = [
     id:12,
     communityId:3,
     authorId:4,
-    title:"<h1>Consultation à distance en cardiologie : une première mondiale en Limousin</h1>",
+    title:"Consultation à distance en cardiologie : une première mondiale en Limousin",
     content:"<p>Dépistage des cardiopathies, amélioration des traitements liés à l’insuffisance cardiaque… Depuis le 16 novembre 2015, Lubersac, commune du Nord de la Corrèze, est à la pointe des technologies en matière de télémédecine. Elle expérimente auprès de 25 patients, la télé-échographie cardiaque. « Une première mondiale », explique Adechotech, la société qui a adapté son robot Melody. Les professionnels de santé, qui voient déjà tous les bienfaits pour les populations rurales de cette nouvelle offre de soins, sont enthousiastes.</p>"+
     "<h2>Bras robotisé</h2>"+
     "<p>Concrètement, un bras robotisé portant une sonde ultrasonore est placé sur le thorax du patient installé dans ce que l’on appelle « le centre patient ».</p>"+
@@ -342,12 +342,45 @@ var people = [
     {
         id: 0,
         email: "sebastien@cadulink.com",
-        firsName: "Sébastien",
+        firstName: "Sébastien",
         lastName: "Velluz",
         profession: "Médecin généraliste",
         practiceLocation: "Valenciennes"
-    }
+    },
+    {
+        id: 1,
+        email: "kamel@cadulink.com",
+        firstName: "Kamel",
+        lastName: "Velluz",
+        profession: "Médecin généraliste",
+        practiceLocation: "Valenciennes"
+    },
+    {
+        id: 2,
+        email: "julien@cadulink.com",
+        firstName: "Julien",
+        lastName: "Velluz",
+        profession: "Médecin généraliste",
+        practiceLocation: "Valenciennes"
+    },
+    {
+        id: 3,
+        email: "anthony@cadulink.com",
+        firstName: "Anthony",
+        lastName: "Velluz",
+        profession: "Médecin généraliste",
+        practiceLocation: "Valenciennes"
+    },
+    {
+        id: 4,
+        email: "philippe@cadulink.com",
+        firstName: "philippe",
+        lastName: "Velluz",
+        profession: "Médecin généraliste",
+        practiceLocation: "Valenciennes"
+    },
 ];
 
+window.localStorage.setItem("articles", JSON.stringify(articles));
 window.localStorage.setItem("people", JSON.stringify(people));
 window.localStorage.setItem("communities", JSON.stringify(communities));

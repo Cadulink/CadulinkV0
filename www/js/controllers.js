@@ -1,5 +1,16 @@
 angular.module('starter.controllers', [])
 
+//Articles pages
+.controller('ArticlesCtrl', function($scope) {
+    $scope.articles = JSON.parse(window.localStorage.getItem('articles'));
+    $scope.people = JSON.parse(window.localStorage.getItem('people'));
+
+    $scope.getAuthor = function(article) {
+        return people[article.authorId].firstName + " " + people[article.authorId].lastName;
+    };
+})
+
+//Register page
 .controller('RegisterCtrl', function($scope, $ionicModal, $timeout, $location) {
 
 
