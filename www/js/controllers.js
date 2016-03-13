@@ -1,9 +1,14 @@
 angular.module('starter.controllers', [])
 
 //Articles pages
-.controller('ArticlesCtrl', function($scope, ArticleService) {
-    $scope.articles = JSON.parse(window.localStorage.getItem('articles'));
-    $scope.people = JSON.parse(window.localStorage.getItem('people'));
+.controller('ArticlesCtrl', function($scope, $stateParams, ArticleService) {
+    if($stateParams.communityId == "") {
+        $scope.articles = ArticleService.getAll();
+    }
+    else {
+        console.log($stateParams.communityId);
+        $scope.articles = ArticleService.getByCommunity($stateParams.communityId);
+    }
 
     $scope.getAuthor = function(article) {
         var person =  ArticleService.getAuthor(article.authorId);
@@ -13,8 +18,17 @@ angular.module('starter.controllers', [])
 
 //Profile pages
 .controller('ProfilCtrl', function($scope, $stateParams, ProfilService) {
-    console.log($stateParams.personId);
+    if($stateParams.personId == "") {
+        $stateParams.personId = JSON.parse(window.localStorage.getItem('userId'));
+    }
     $scope.person = ProfilService.get($stateParams.personId);
+    $scope.communities = ProfilService.getCommunities($stateParams.personId);
+})
+
+//Community pages
+.controller('CommunityCtrl', function($scope, $stateParams, CommunityService) {
+    $scope.community = CommunityService.get($stateParams.communityId);
+    $scope.communities = CommunityService.getCommunities($stateParams.communityId);
 })
 
 //Register page
@@ -53,7 +67,6 @@ angular.module('starter.controllers', [])
     window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
     $location.path('home');
-    
   };
 
 });

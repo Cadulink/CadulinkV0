@@ -1,0 +1,29 @@
+<ion-view view-title="Community Page">
+<ion-content padding="true">
+  <ion-list>
+        <ion-item ng-repeat="communityP in communityP" class="item item-icon-right">
+          <span ng-class="{done: communityP.done}">{{communityP.title}}</span>
+        </ion-item>
+      </ion-list>
+  <div class="card">
+   <div class="item item-avatar">
+      <img src="img/caducee.jpg">
+      <h2>{{community.label}}</h2>
+      <p>{{community.description}}</p>
+      <p><a ui-sref="home({communityId: community.id})">Accès aux articles</a></p>
+   </div>
+
+   <div class="item item-body">
+     <em><p>Communautés liées :</p></em>
+     <ul>
+         <li ng-repeat="community in communities"><a ui-sref="community({communityId: community.id})">{{community.label}}</a></li>
+     </ul>
+    </div>
+    <div class="item item-avatar">
+      <img src="img/SVelluz.jpg">
+       <p>Animateur : </p>
+       <h2>Sebastien VELLUZ</h2>
+    </div>
+</div>
+</ion-content>
+</ion-view>

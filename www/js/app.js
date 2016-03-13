@@ -45,14 +45,17 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
 
     // home
     .state('home', {
-        url: '/home',
-        templateUrl: 'templates/home.html'
+        url: '/home/:communityId',
+        templateUrl: 'templates/home.html',
+        controller: 'ArticlesCtrl'
     })
     // community
     .state('community', {
-        url: '/community',
-        templateUrl: 'templates/community.html'
+        url: '/community/:communityId',
+        templateUrl: 'templates/community.html',
+        controller: 'CommunityCtrl'
     })
+
     // article
     .state('article', {
         url: '/article',
@@ -70,18 +73,6 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         url: '/profil/:personId',
         templateUrl: 'templates/profil.html',
         controller: 'ProfilCtrl'
-    })
-
-    // Profil Communauté
-    $stateProvider.state('CommunityDm', {
-        url: '/CommunityDm',
-        templateUrl: 'templates/CommunityDm.html'
-    })
-
-    // comunityPage
-    $stateProvider.state('communityPage', {
-        url: '/communityPage',
-        templateUrl: 'templates/communityPage.html'
     })
 
     // photo api

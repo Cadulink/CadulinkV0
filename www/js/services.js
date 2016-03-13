@@ -1,6 +1,6 @@
 angular.module('starter.services', [])
 
-.factory('ProfilService', function() {
+.factory('ProfilService', ['CommunityService', function(CommunityService) {
     var people = [
         {
             id: 0,
@@ -8,7 +8,8 @@ angular.module('starter.services', [])
             firstName: "Sébastien",
             lastName: "Velluz",
             profession: "Médecin généraliste",
-            practiceLocation: "Valenciennes"
+            practiceLocation: "Valenciennes",
+            communities: [0,2,3]
         },
         {
             id: 1,
@@ -16,7 +17,8 @@ angular.module('starter.services', [])
             firstName: "Kamel",
             lastName: "Velluz",
             profession: "Chirurgien-dentiste",
-            practiceLocation: "Anzin"
+            practiceLocation: "Anzin",
+            communities: [1,2]
         },
         {
             id: 2,
@@ -24,7 +26,8 @@ angular.module('starter.services', [])
             firstName: "Julien",
             lastName: "Velluz",
             profession: "Étudiant sage-femme",
-            practiceLocation: "Lille"
+            practiceLocation: "Lille",
+            communities: [0,4]
         },
         {
             id: 3,
@@ -32,7 +35,8 @@ angular.module('starter.services', [])
             firstName: "Anthony",
             lastName: "Velluz",
             profession: "ORL",
-            practiceLocation: "Tourcoing"
+            practiceLocation: "Tourcoing",
+            communities: [1,2,4]
         },
         {
             id: 4,
@@ -40,16 +44,26 @@ angular.module('starter.services', [])
             firstName: "philippe",
             lastName: "Velluz",
             profession: "Médecin généraliste",
-            practiceLocation: "Valenciennes"
+            practiceLocation: "Valenciennes",
+            communities: [0,3,4]
         },
     ];
 
     return {
         get: function(personId=0) {
             return people[personId];
+        },
+        getCommunities(personId=0){
+            communities = [];
+            people[personId].communities.forEach(
+                function (element, index, arry) {
+                    communities.push(CommunityService.get(element));
+                }
+            );
+            return communities;
         }
     };
-})
+}])
 
 .factory('ArticleService', ['ProfilService', function(ProfilService) {
     var articles = [
@@ -251,8 +265,17 @@ angular.module('starter.services', [])
     ];
 
     return {
-        all: function() {
+        getAll: function() {
             return articles;
+        },
+        getByCommunity: function(communityId) {
+            subArticles = [];
+            articles.forEach(function(element, index, array) {
+                if(element.communityId == communityId) {
+                    subArticles.push(element);
+                }
+            });
+            return subArticles;
         },
         get: function(articleId) {
             return null;
@@ -265,11 +288,25 @@ angular.module('starter.services', [])
 
 .factory('CommunityService', function() {
     var communities = [
-        { id: 0, label: "dentiste", communityManagerId: 2 },
-        { id: 1, label: "Médecin", communityManagerId: 1 },
-        { id: 2, label: "Infirmière", communityManagerId: 3 },
-        { id: 3, label: "Kinésithérapeute", communityManagerId: 4 }
+        { id: 0, label: "Dentiste", description: "texte", communityManagerId: 2, relatedCommunities: [1,3,4] },
+        { id: 1, label: "Médecin", description: "texte", communityManagerId: 1, relatedCommunities: [1,2] },
+        { id: 2, label: "Infirmière", description: "texte", communityManagerId: 3, relatedCommunities: [0,2,4] },
+        { id: 3, label: "Kinésithérapeute", description: "texte", communityManagerId: 4, relatedCommunities: [1,3,4] },
+        { id: 4, label: "Chirurgie", description: "texte", communityManagerId: 4, relatedCommunities: [3,4] }
     ];
 
-    return {};
+    return {
+        get: function(communityId) {
+            return communities[communityId];
+        },
+        getCommunities(communityId=0){
+            subCommunities = [];
+            communities[communityId].relatedCommunities.forEach(
+                function (element, index, array) {
+                    subCommunities.push(communities[element]);
+                }
+            );
+            return subCommunities;
+        }
+    };
 });
