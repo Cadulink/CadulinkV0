@@ -19,11 +19,10 @@ angular.module('starter.controllers', [])
 
   $scope.submit = function(email, password, lastName, firstName, profession, practiceLocation){
 
-    var perso = {
-      'user': []
-    };
+    var people = JSON.parse(window.localStorage.getItem('people'));
 
-    perso.user.push({
+    people.push({
+      'id': people.length,
       'email': email,
       'password': password,
       'lastName': lastName,
@@ -32,8 +31,7 @@ angular.module('starter.controllers', [])
       'practiceLocation': practiceLocation
     });
 
-
-    window.localStorage.setItem('perso', JSON.stringify(perso));
+    window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
     $location.path('home');
     

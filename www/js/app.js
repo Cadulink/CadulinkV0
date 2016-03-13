@@ -26,113 +26,85 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
 
 
 .config(function($stateProvider, $urlRouterProvider) {
-// connection
-  $stateProvider
-  .state('connect', {
-    url: '/connect',
-    templateUrl: 'templates/connect.html'
-  })
-// mots de passe oublié
-  .state('forgotPassword', {
-    url: '/forgotPassword',
-      templateUrl: 'templates/forgotPassword.html'
-  })
+    // connection
+    $stateProvider
+        .state('connect', {
+            url: '/connect',
+            templateUrl: 'templates/connect.html'
+        })
+    // register
+    .state('register', {
+        url: '/register',
+        templateUrl: 'templates/register.html'
+    })
+    // mot de passe oublié
+    .state('forgotPassword', {
+        url: '/forgotPassword',
+        templateUrl: 'templates/forgotPassword.html'
+    })
 
-// register
-  .state('register', {
-    url: '/register',
-      templateUrl: 'templates/register.html'
-  })
+    // home
+    .state('home', {
+        url: '/home',
+        templateUrl: 'templates/home.html'
+    })
+    // community
+    .state('community', {
+        url: '/community',
+        templateUrl: 'templates/community.html'
+    })
+    // article
+    .state('article', {
+        url: '/article',
+        templateUrl: 'templates/article.html'
+    })
 
-// home
-.state('home', {
-  url: '/home',
-    templateUrl: 'templates/home.html'
-})
+    // agenda
+    .state('agenda', {
+        url: '/agenda',
+        templateUrl: 'templates/agenda.html'
+    })
 
-// community
-.state('community', {
-  url: '/community',
-    templateUrl: 'templates/community.html'
-})
-// article
-.state('article', {
-  url: '/article',
-    templateUrl: 'templates/article.html'
-})
-// agenda
-.state('agenda', {
-  url: '/agenda',
-    templateUrl: 'templates/agenda.html'
-})
-// messenger
-.state('messenger', {
-  url: '/messenger',
-    templateUrl: 'templates/messenger.html'
-})
-// profil
-.state('profil', {
-  url: '/profil',
-    templateUrl: 'templates/profil.html'
-})
-// photo api
-.state('photo', {
-  url: '/photo',
-    templateUrl: 'templates/photo.html'
-});
+    // profil
+    .state('profil', {
+        url: '/profil',
+        templateUrl: 'templates/profil.html'
+    })
+    //Modification de Profil
+    $stateProvider.state('profilModif', {
+        url: '/profilModif',
+        templateUrl: 'templates/profilModif.html'
+    })
 
-//Modification de Profil
-$stateProvider.state('profilModif', {
-  url: '/profilModif',
-  templateUrl: 'templates/profilModif.html'
-})
+    // Mon Profil
+    $stateProvider.state('monProfil', {
+        url: '/monProfil',
+        templateUrl: 'templates/monProfil.html'
+    })
+    // Profil Cadulink
+    .state('CaduProfil', {
+        url: '/CaduProfil',
+        templateUrl: 'templates/CaduProfil.html'
+    })
+    // Profil Communauté
+    $stateProvider.state('CommunityDm', {
+        url: '/CommunityDm',
+        templateUrl: 'templates/CommunityDm.html'
+    })
 
-// Mon Profil
-$stateProvider.state('monProfil', {
-  url: '/monProfil',
-  templateUrl: 'templates/monProfil.html'
-})
+    // comunityPage
+    $stateProvider.state('communityPage', {
+        url: '/communityPage',
+        templateUrl: 'templates/communityPage.html'
+    })
 
-// Profil Cadulink
-  .state('CaduProfil', {
-    url: '/CaduProfil',
-      templateUrl: 'templates/CaduProfil.html'
-  })
+    // photo api
+    .state('photo', {
+        url: '/photo',
+        templateUrl: 'templates/photo.html'
+    });
 
-// Profil Communauté
-$stateProvider.state('CommunityDm', {
-  url: '/CommunityDm',
-  templateUrl: 'templates/CommunityDm.html'
-})
-
-// comunityPage
-$stateProvider.state('communityPage', {
-  url: '/communityPage',
-  templateUrl: 'templates/communityPage.html'
-})
-
-// Post un article
-  .state('post', {
-    url: '/post',
-      templateUrl: 'templates/post.html'
-  })
-
-// article
-  .state('article', {
-    url: '/article:id',
-      templateUrl: 'templates/article.html',
-        controller: 'articleCtrl'
-})
-
-// communauté
-  .state('CommunityDm', {
-    url: '/communities:id',
-      templateUrl: 'templates/CommunityDm.html',
-        controller: 'communitiesCtrl'
-})
-
-  $urlRouterProvider.otherwise('/connect')
-
+    $urlRouterProvider.otherwise('/connect')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
@@ -359,8 +331,23 @@ var article = [
   }
 ];
 
-var communities = [{ id: 1, label: "dentiste", communityManagerId: 2 },
-{ id: 2, label: "Médecin", communityManagerId: 1 },{id: 3, label: "Infirmière", communityManagerId: 3 },
- {id: 4, label: "Kinésithérapeute", communityManagerId: 4 } ];
+var communities = [
+    { id: 0, label: "dentiste", communityManagerId: 2 },
+    { id: 1, label: "Médecin", communityManagerId: 1 },
+    { id: 2, label: "Infirmière", communityManagerId: 3 },
+    { id: 3, label: "Kinésithérapeute", communityManagerId: 4 }
+];
 
-window.localStorage.setItem("communuties", JSON.stringify(communities))
+var people = [
+    {
+        id: 0,
+        email: "sebastien@cadulink.com",
+        firsName: "Sébastien",
+        lastName: "Velluz",
+        profession: "Médecin généraliste",
+        practiceLocation: "Valenciennes"
+    }
+];
+
+window.localStorage.setItem("people", JSON.stringify(people));
+window.localStorage.setItem("communities", JSON.stringify(communities));
