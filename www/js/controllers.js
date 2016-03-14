@@ -17,12 +17,12 @@ angular.module('starter.controllers', [])
 })
 
 //Profile pages
-.controller('ProfilCtrl', function($scope, $stateParams, ProfilService) {
+.controller('PersonCtrl', function($scope, $stateParams, PersonService) {
     if($stateParams.personId == "") {
         $stateParams.personId = JSON.parse(window.localStorage.getItem('userId'));
     }
-    $scope.person = ProfilService.get($stateParams.personId);
-    $scope.communities = ProfilService.getCommunities($stateParams.personId);
+    $scope.person = PersonService.get($stateParams.personId);
+    $scope.communities = PersonService.getCommunities($stateParams.personId);
 })
 
 //Community pages
