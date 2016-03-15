@@ -74,6 +74,12 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         templateUrl: 'templates/profil.html',
         controller: 'PersonCtrl'
     })
+// delete
+    .state('delete', {
+        url: '/delete/:articleId',
+        templateUrl: 'templates/delete.html',
+        controller: 'DeleteCtrl'
+    })
 
     // photo api
     .state('photo', {

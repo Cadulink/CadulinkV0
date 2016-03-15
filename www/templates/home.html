@@ -15,8 +15,11 @@
                 </div>
                 <div class="item item-body">
                     <div ng-bind-html="article.content"></div>
+                    <button ui-sref="delete({articleId: article.id})" class="button button-positive button-block">delete</button>
+
                 </div>
             </div>
             <hr>
+
     </ion-content>
 </ion-view>

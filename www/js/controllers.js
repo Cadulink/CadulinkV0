@@ -15,7 +15,13 @@ angular.module('starter.controllers', [])
         return person.firstName + " " + person.lastName;
     };
 })
-
+// delete article
+.controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
+  var retour = ArticleService.delete($stateParams.articleId);
+  if(retour == true) {
+    $scope.text = "Article " + $stateParams.articleId + " supprimé";
+  }
+})
 //Profile pages
 .controller('PersonCtrl', function($scope, $stateParams, PersonService) {
     if($stateParams.personId == "") {
