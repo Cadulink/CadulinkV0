@@ -1,6 +1,6 @@
-angular.module('articles.data', [])
+angular.module('articles.data', []);
 
-let articles = [
+var articles = [
   {
     id:1,
     communityId:1,
@@ -52,8 +52,8 @@ let articles = [
     communityId:2,
     authorId:3,
     title:"DEBAT : aujourd'hui grève des agents de la fonction publique hospitalière !",
-    content:"<p>Soumis à un régime de rigueur depuis juillet 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</br>"+
-    "Soumis à un régime de rigueur depuis juillet 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</p>"+
+    content:"<p>Soumis à un régime de rigueur depuis juilvar 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</br>"+
+    "Soumis à un régime de rigueur depuis juilvar 2010, les 5,6 millions d'agents de la fonction publique sont appelés à faire grève et manifester pour une hausse de leur pouvoir d'achat, mardi, jour de mobilisation, parallèlement, des enseignants.</p>"+
     "<h2>Les revendications</h2>"+
     "<p>Outre la baisse du pouvoir d'achat, CGT, FO et Solidaires dénoncent 'la perte d'emplois dans des secteurs clés de la fonction publique'. Ils soulignent que si des créations de postes ont été annoncées dans l'Éducation (+ 8 561 en 2016) et la sécurité (+ 732 police-gendarmerie, + 978 justice en 2016), 'la fonction publique a perdu globalement 150 000 postes depuis 2007', principalement avant 2012. Les syndicats réclament 'des créations nettes d'emplois publics statutaires dans les très nombreux secteurs qui en ont besoin', notamment le monde hospitalier.</p>"+
     "<h2>Prudence ministérielle</h2>"+
@@ -142,7 +142,7 @@ let articles = [
     communityId:2,
     authorId:1,
     title:"Infirmier(e) DE Cadre URGENT",
-    content:"<p>Nous recherchons pour notre client un(e) infirmier(e) diplômé(e) d'Etat Cadre ou Cadre de Santé dans le cadre d'un CDI à temps complet dans une structure récente d'environ 80 places sur Strasbourg.</p>"+
+    content:"<p>Nous recherchons pour notre client un(e) infirmier(e) diplômé(e) d'Etat Cadre ou Cadre de Santé dans le cadre d'un CDI à temps compvar dans une structure récente d'environ 80 places sur Strasbourg.</p>"+
     "<p>En étroite collaboration avec le médecin, vos tâches seront de :</p>"+
     "<ul><li>- gérer une équipe pluridisciplinaires,</li><li>- organiser le planning,</li><li>- suivre les projets de la structure (animation, communication, etc..)</li>"+
     "<p>Nous recherchons un(e) Infirmier(e) Diplômé(e) d'État Cadre ou Cadre de Santé expérimenté(e).</p>"+

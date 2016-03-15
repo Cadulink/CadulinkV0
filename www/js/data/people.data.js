@@ -1,6 +1,6 @@
-angular.module('people.data', [])
+angular.module('people.data', []);
 
-let people = [
+var people = [
     {
         id: 0,
         email: "sebastien@cadulink.com",
