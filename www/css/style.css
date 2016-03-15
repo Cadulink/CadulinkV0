@@ -8,6 +8,15 @@
   height:50%;
 }
 
+.center {
+  text-align: center;
+}
+
+.ion-android-calendar {
+  font-size: 40px;
+  left: 0;
+}
+
 .spacerVic{
   height: 40px;
 }

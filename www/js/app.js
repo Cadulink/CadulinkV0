@@ -37,6 +37,12 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         url: '/register',
         templateUrl: 'templates/register.html'
     })
+
+  // Annonce
+  .state('annoncePage', {
+      url: '/annoncePage',
+      templateUrl: 'templates/annonce.html'
+  })
     // mot de passe oublié
     .state('forgotPassword', {
         url: '/forgotPassword',
@@ -81,7 +87,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         templateUrl: 'templates/photo.html'
     });
 
-    $urlRouterProvider.otherwise('/connect')
+    $urlRouterProvider.otherwise('/annoncePage')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {

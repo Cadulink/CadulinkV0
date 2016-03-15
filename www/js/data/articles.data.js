@@ -1,6 +1,6 @@
 angular.module('articles.data', []);
 
-var articles = [
+var  articles = [
   {
     id:1,
     communityId:1,
@@ -197,4 +197,3 @@ var articles = [
     date:'21/01/2016'
   }
 ];
-
