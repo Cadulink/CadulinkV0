@@ -22,6 +22,20 @@ angular.module('starter.controllers', [])
     $scope.text = "Article " + $stateParams.articleId + " supprimé";
   }
 })
+// edit article
+.controller('EditCtrl', function($scope, $stateParams, ArticleService){
+  var edit = ArticleService.edit($stateParams.articleId);
+  if(edit == true) {
+    $scope.text = "Article " + $stateParams.articleId + " modifié";
+  }
+})
+
+// newArticle article
+.controller('NewCtrl', function($scope, $stateParams, ArticleService){
+    $scope.submit = function(title , content) {
+        ArticleService.new(0,userId,title,content);
+    };
+})
 //Profile pages
 .controller('PersonCtrl', function($scope, $stateParams, PersonService) {
     if($stateParams.personId == "") {

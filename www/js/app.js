@@ -80,6 +80,19 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         templateUrl: 'templates/delete.html',
         controller: 'DeleteCtrl'
     })
+    // edit
+    .state('edit', {
+      url: '/edit/:articleId',
+      templateUrl: 'templates/edit.html',
+      // controller: 'EditCtrl'
+    })
+
+    // edit
+    .state('newArticle', {
+      url: '/newArticle',
+      templateUrl: 'templates/newArticle.html',
+      // controller: 'NewCtrl'
+    })
 
     // photo api
     .state('photo', {
@@ -87,7 +100,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
         templateUrl: 'templates/photo.html'
     });
 
-    $urlRouterProvider.otherwise('/connect')
+    $urlRouterProvider.otherwise('/newArticle')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
