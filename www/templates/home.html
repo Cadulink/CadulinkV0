@@ -8,15 +8,19 @@
                 <div class="item item-body">
                     <h1>{{article.title}}</h1>
                 </div>
-                <div class="item item-avatar">
-                    <img src="img/sebatien.jpg">
-                    <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
-                    <p>le {{article.date}}</p>
-                </div>
-                <div class="item item-body">
-                    <div ng-bind-html="article.content"></div>
+                <div class="card">
+                  <div class="item item-text-wrap">
+                  </div>
+                  <div class="item item-avatar">
+                      <img src="img/sebatien.jpg">
+                      <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
+                      <p>le {{article.date}}</p>
+                  </div>
+                  <div class="item item-body">
+                      <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
+                  </div>
                 </div>
             </div>
-            <hr>
+        </div>
     </ion-content>
 </ion-view>
