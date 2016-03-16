@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngRoute'])
+angular.module('starter.controllers', [])
 
 //Articles pages
 .controller('ArticlesCtrl', function($scope, $stateParams, ArticleService) {
