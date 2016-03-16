@@ -3,6 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
+//<<<<<<< HEAD
 var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers'])
 
 .run(function($ionicPlatform) {
@@ -26,74 +27,65 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
 
 
 .config(function($stateProvider, $urlRouterProvider) {
-// connection
-  $stateProvider
-  .state('connect', {
-    url: '/connect',
-    templateUrl: 'templates/connect.html'
-  })
-// mots de passe oublié
-  .state('forgotPassword', {
-    url: '/forgotPassword',
-      templateUrl: 'templates/forgotPassword.html'
-  })
-// register
-  .state('register', {
-    url: '/register',
-      templateUrl: 'templates/register.html'
-  })
 
-// home
-.state('home', {
-  url: '/home',
-    templateUrl: 'templates/home.html'
-})
+//=======
+    // connection
+    $stateProvider
+        .state('connect', {
+            url: '/connect',
+            templateUrl: 'templates/connect.html'
+        })
+    // register
+    .state('register', {
+        url: '/register',
+        templateUrl: 'templates/register.html'
+    })
+    // mot de passe oublié
+    .state('forgotPassword', {
+        url: '/forgotPassword',
+        templateUrl: 'templates/forgotPassword.html'
+    })
 
-// community
-.state('community', {
-  url: '/community',
-    templateUrl: 'templates/community.html'
-})
-// article
-.state('article', {
-  url: '/article',
-    templateUrl: 'templates/article.html'
-})
-// agenda
-.state('agenda', {
-  url: '/agenda',
-    templateUrl: 'templates/agenda.html'
-})
-// messenger
-.state('messenger', {
-  url: '/messenger',
-    templateUrl: 'templates/messenger.html'
-})
-// profil
-.state('profil', {
-  url: '/profil',
-    templateUrl: 'templates/profil.html'
-})
-// photo api
-.state('photo', {
-  url: '/photo',
-    templateUrl: 'templates/photo.html'
-});
+    // home
+    .state('home', {
+        url: '/home/:communityId',
+        templateUrl: 'templates/home.html',
+        controller: 'ArticlesCtrl'
+    })
+    // community
+    .state('community', {
+        url: '/community/:communityId',
+        templateUrl: 'templates/community.html',
+        controller: 'CommunityCtrl'
+    })
 
-//Modification de Profil
-$stateProvider.state('profilModif', {
-  url: '/profilModif',
-  templateUrl: 'templates/profilModif.html'
-})
+    // article
+    .state('article', {
+        url: '/article/:articleId',
+        templateUrl: 'templates/article.html',
+        controller:'AfficherCtrl'
+    })
 
-// Mon Profil
-$stateProvider.state('monProfil', {
-  url: '/monProfil',
-  templateUrl: 'templates/monProfil.html'
-})
+    // agenda
+    .state('agenda', {
+        url: '/agenda',
+        templateUrl: 'templates/agenda.html'
+    })
 
-  $urlRouterProvider.otherwise('/connect')
+    // profil
+    .state('profil', {
+        url: '/profil/:personId',
+        templateUrl: 'templates/profil.html',
+        controller: 'PersonCtrl'
+    })
 
+    // photo api
+    .state('photo', {
+        url: '/photo',
+        templateUrl: 'templates/photo.html'
+    });
+
+    $urlRouterProvider.otherwise('/connect')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
