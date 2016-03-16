@@ -57,7 +57,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     })
 
     // article
-    .state('article', {
+    /*.state('article', {
         url: '/article',
         templateUrl: 'templates/article.html'
     })
@@ -66,7 +66,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     .state('agenda', {
         url: '/agenda',
         templateUrl: 'templates/agenda.html'
-    })
+    })*/
 
     // profil
     .state('profil', {

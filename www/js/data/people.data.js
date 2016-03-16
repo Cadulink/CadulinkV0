@@ -4,6 +4,7 @@ var people = [
     {
         id: 0,
         email: "sebastien@cadulink.com",
+        password : "cadulink",
         firstName: "Sébastien",
         lastName: "Velluz",
         profession: "Médecin généraliste",
@@ -13,6 +14,7 @@ var people = [
     {
         id: 1,
         email: "kamel@cadulink.com",
+        password : "cadulink",
         firstName: "Kamel",
         lastName: "Velluz",
         profession: "Chirurgien-dentiste",
@@ -22,6 +24,7 @@ var people = [
     {
         id: 2,
         email: "julien@cadulink.com",
+        password : "cadulink",
         firstName: "Julien",
         lastName: "Velluz",
         profession: "Étudiant sage-femme",
@@ -31,6 +34,7 @@ var people = [
     {
         id: 3,
         email: "anthony@cadulink.com",
+        password : "cadulink",
         firstName: "Anthony",
         lastName: "Velluz",
         profession: "ORL",
@@ -40,6 +44,7 @@ var people = [
     {
         id: 4,
         email: "philippe@cadulink.com",
+        password : "cadulink",
         firstName: "philippe",
         lastName: "Velluz",
         profession: "Médecin généraliste",

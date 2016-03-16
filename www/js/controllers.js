@@ -21,7 +21,7 @@ angular.module('starter.controllers', [])
     if($stateParams.personId == "") {
         $stateParams.personId = JSON.parse(window.localStorage.getItem('userId'));
     }
-    $scope.person = PersonService.get($stateParams.personId);
+    $scope.person = PersonService.getId($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);
 })
 
@@ -32,7 +32,7 @@ angular.module('starter.controllers', [])
 })
 
 //Register page
-.controller('RegisterCtrl', function($scope, $ionicModal, $timeout, $location) {
+.controller('RegisterCtrl', function($scope, $ionicModal, $timeout, $location, $stateParams, PersonService) {
 
 
   $ionicModal.fromTemplateUrl('templates/register.html', {
@@ -51,22 +51,52 @@ angular.module('starter.controllers', [])
 
   $scope.submit = function(email, password, lastName, firstName, profession, practiceLocation){
 
-    var people = JSON.parse(window.localStorage.getItem('people'));
-
-    people.push({
-      'id': people.length,
-      'email': email,
-      'password': password,
-      'lastName': lastName,
-      'firstName': firstName,
-      'profession': profession,
-      'practiceLocation': practiceLocation
-    });
-
-    window.localStorage.setItem('userId', JSON.stringify(people.length));
-    window.localStorage.setItem('people', JSON.stringify(people));
+    //var people = JSON.parse(window.localStorage.getItem('people'));
+    var id = PersonService.get().length;
+    $stateParams.personId = id;
+    PersonService.create(email, password, firstName, lastName, profession, practiceLocation);
+    console.log(PersonService.getId(id).email);
+    //window.localStorage.setItem('userId', JSON.stringify(people.length));
+    //window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
-    $location.path('home');
+    $location.path('profil/'+$stateParams.personId);
+  };
+
+})
+
+.controller('LogCtrl', function($scope, $location, PersonService) {
+
+  $scope.submit = function(email, password) {
+    //var people = JSON.parse(localStorage.getItem('people'));
+    var error = true;
+
+    for (var i = 0; i < PersonService.get().length; i++) {
+      if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
+        $location.path('home/1');
+        error = false;
+      }
+    }
+    if(error) {
+      alert("Mauvais login/mot de passe");
+    }
+  }
+
+})
+
+.controller('EditProfilCtrl', function($scope, $ionicModal, PersonService){
+
+  $ionicModal.fromTemplateUrl('templates/register.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.OpenModal = function(){
+    $scope.modal.show();
+  };
+
+  $scope.CloseModal = function(){
+    $scope.modal.hide();
   };
 
 });

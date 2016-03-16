@@ -5,7 +5,7 @@ angular.module('communities.service', ['articles.data', 'communities.data', 'peo
         get: function(communityId) {
             return communities[communityId];
         },
-        getCommunities(communityId=0){
+        getCommunities(communityId){
             subCommunities = [];
             communities[communityId].relatedCommunities.forEach(
                 function (element, index, array) {
