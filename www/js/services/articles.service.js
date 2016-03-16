@@ -33,6 +33,5 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             }
           }
         }
-        }
     };
 });
