@@ -12,7 +12,7 @@ let comments = [
   {id: 9, authorId: 1, ArticleId: 0, content:"<p>Vraiment cool ! </p>"}
   {id: 10, authorId: 0, ArticleId: 1, content:"<p>Trés concis qui represente bien le corps medical ! </p>"}
   {id: 11, authorId: 1, ArticleId: 1, content:"<p>Super article ! </p>"}
-  {id: 12, authorId: 4, ArticleId: 2, content:"<p>Super article ! </p>"}
+  {id: 12, authorId: 4, ArticleId: 2, content:"<p>Super ! </p>"}
   {id: 13, authorId: 1, ArticleId: 3, content:"<p>Super article ! </p>"}
   {id: 14, authorId: 0, ArticleId: 0, content:"<p>Super article ! </p>"}
   {id: 15, authorId: 1, ArticleId: 1, content:"<p>Super article ! </p>"}
