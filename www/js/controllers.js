@@ -21,6 +21,7 @@ angular.module('starter.controllers', [])
     if($stateParams.personId == "") {
         $stateParams.personId = JSON.parse(window.localStorage.getItem('userId'));
     }
+    $scope.PersonService = PersonService;
     $scope.person = PersonService.get($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);
 })

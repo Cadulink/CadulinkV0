@@ -5,7 +5,7 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
         get: function(personId=0) {
             return people[personId];
         },
-        getCommunities(personId=0){
+        getCommunities(personId){
             subCommunities = [];
             people[personId].communities.forEach(
                 function (element, index, array) {
@@ -13,6 +13,27 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
                 }
             );
             return subCommunities;
+        },
+        isInCommunity(personId,communityId) {
+            if(people[personId].communities.indexOf(communityId) != -1) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        },
+        joinCommunity(personId,communityId) {
+            people[pesonId].communities.push(communityId);
+            return true;
+        },
+        quitCommunity(personId,communityId) {
+            for(var i=0;i<people[personId].communities.length;i++) {
+                if(people[personId].communities[i] == communityId) {
+                    people[personId].communities.splice(i,1);
+                    return true;
+                }
+            }
+            return false;
         }
     };
 });

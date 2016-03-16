@@ -5,7 +5,7 @@ angular.module('communities.service', ['articles.data', 'communities.data', 'peo
         get: function(communityId) {
             return communities[communityId];
         },
-        getCommunities(communityId=0){
+        getCommunities(communityId){
             subCommunities = [];
             communities[communityId].relatedCommunities.forEach(
                 function (element, index, array) {
@@ -13,6 +13,13 @@ angular.module('communities.service', ['articles.data', 'communities.data', 'peo
                 }
             );
             return subCommunities;
+        },
+        edit(id,label,description,communityManagerId) {
+            communities[communityId].id = id;
+            communities[communityId].label = label;
+            communities[communityId].description = description;
+            communities[communityId].communityId = communityId;
+            return true;
         }
     };
 });
