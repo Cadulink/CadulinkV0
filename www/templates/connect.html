@@ -4,15 +4,17 @@
     <div class="spacer"></div>
     <img ng-src="img/medium-logo.png" alt="Logo" class="col-offset-20" />
     <div class="spacer"></div>
-    <div class="list">
-      <label class="item item-input">
-        <input type="email" placeholder="Email">
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Password">
-      </label>
+    <div ng-controller="LogCtrl">
+      <form class="list" ng-submit="submit(email, password)">
+        <label class="item item-input">
+          <input type="email" ng-model="email" placeholder="Email" required>
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model="password" placeholder="Mot de passe" required>
+        </label>
+        <button class="button button-positive button-block">Se connecter</button>
+      </form>
     </div>
-    <a ui-sref="home" class="button button-positive button-block">Se connecter</a>
     <div ng-controller="RegisterCtrl">
       <button ng-click="OpenModal()" class="button button-positive button-block">S'inscrire</button>
     </div>

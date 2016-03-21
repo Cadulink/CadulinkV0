@@ -6,9 +6,10 @@
         <div class="spacerVic"></div>
         <div ng-app="starter.controllers" ng-controller="PersonCtrl">
             <div class="card">
-                <div class="item item-text-wrap item-avatar">
+                <div class="item item-text-wrap item-avatar item-button-right">
                     <img src="img/SVelluz.jpg">
-                    {{person.firstName}} {{person.lastName}}
+                    {{person.firstName + ' ' + person.lastName}}
+                    <button class="button button-positive" ng-controller="EditProfilCtrl" ng-click="OpenModal()"><i class="ion-edit"></i></button>
                 </div>
             </div>
             <div class="card">
