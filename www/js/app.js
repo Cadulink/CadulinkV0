@@ -51,8 +51,15 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     })
     // community
     .state('community', {
+        cache: false,
         url: '/community/:communityId',
         templateUrl: 'templates/community.html',
+        controller: 'CommunityCtrl'
+    })
+    // community edit
+    .state('communityEdit', {
+        url: '/communityEdit/:communityId',
+        templateUrl: 'templates/communityEdit.html',
         controller: 'CommunityCtrl'
     })
 

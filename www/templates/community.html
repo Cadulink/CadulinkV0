@@ -9,9 +9,9 @@
    <div class="item item-avatar">
       <img src="img/caducee.jpg">
       <h2>{{community.label}}</h2>
-      <p>{{community.description}}</p>
       <p><a ui-sref="home({communityId: community.id})">Accès aux articles</a></p>
    </div>
+   <div class="item-body">{{community.description}}</div>
 
    <div class="item item-body">
      <em><p>Communautés liées :</p></em>
@@ -25,11 +25,16 @@
        <h2>Sebastien VELLUZ</h2>
     </div>
     <div ng-controller="PersonCtrl">
-        <div ng-if="person.communities.indexOf(community.id) == -1">
-            <button ng-click="joinCommunity(person.id, community.id)" class="button button-positive button-block">join</button>
+        <div ng-if="community.communityManagerId != person.id">
+            <div ng-if="person.communities.indexOf(community.id) == -1">
+                <button ng-click="joinCommunity(person.id, community.id)" class="button button-positive button-block">Rejoindre</button>
+            </div>
+            <div ng-if="person.communities.indexOf(community.id) != -1">
+                <button ng-click="quitCommunity(person.id, community.id)" class="button button-positive button-block">Quitter</button>
+            </div>
         </div>
-        <div ng-if="person.communities.indexOf(community.id) != -1">
-            <button ng-click="quitCommunity(person.id, community.id)" class="button button-positive button-block">quit</button>
+        <div ng-if="community.communityManagerId == person.id">
+            <button ui-sref="communityEdit({communityId: community.id})" class="button button-positive button-block">Éditer</button>
         </div>
     </div>
     <div ng-controller="ArticlesCtrl">

@@ -26,12 +26,15 @@ angular.module('starter.controllers', [])
 })
 
 //Community pages
-.controller('CommunityCtrl', function($scope, $stateParams, CommunityService) {
+.controller('CommunityCtrl', function($scope, $stateParams, $ionicHistory, CommunityService) {
     if($stateParams.communityId == "") {
         $stateParams.communityId = 1;
     }
     $scope.community = CommunityService.get($stateParams.communityId);
     $scope.communities = CommunityService.getCommunities($stateParams.communityId);
+    $scope.goBack = function() {
+        $ionicHistory.goBack();
+    };
 })
 
 //Register page

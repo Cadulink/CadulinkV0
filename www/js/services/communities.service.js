@@ -14,7 +14,7 @@ angular.module('communities.service', ['articles.data', 'communities.data', 'peo
             );
             return subCommunities;
         },
-        edit(id,label,description,communityManagerId) {
+        edit(communityId,label,description,communityManagerId) {
             communities[communityId].id = id;
             communities[communityId].label = label;
             communities[communityId].description = description;
