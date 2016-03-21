@@ -16,7 +16,7 @@ var people = [
         email: "kamel@cadulink.com",
         password : "cadulink",
         firstName: "Kamel",
-        lastName: "Velluz",
+        lastName: "Tansaout",
         profession: "Chirurgien-dentiste",
         practiceLocation: "Anzin",
         communities: [1,2]
@@ -26,7 +26,7 @@ var people = [
         email: "julien@cadulink.com",
         password : "cadulink",
         firstName: "Julien",
-        lastName: "Velluz",
+        lastName: "Fourrier",
         profession: "Étudiant sage-femme",
         practiceLocation: "Lille",
         communities: [0,4]
@@ -36,7 +36,7 @@ var people = [
         email: "anthony@cadulink.com",
         password : "cadulink",
         firstName: "Anthony",
-        lastName: "Velluz",
+        lastName: "De Mendonca",
         profession: "ORL",
         practiceLocation: "Tourcoing",
         communities: [1,2,4]
@@ -45,8 +45,8 @@ var people = [
         id: 4,
         email: "philippe@cadulink.com",
         password : "cadulink",
-        firstName: "philippe",
-        lastName: "Velluz",
+        firstName: "Philippe",
+        lastName: "Pary",
         profession: "Médecin généraliste",
         practiceLocation: "Valenciennes",
         communities: [0,3,4]
