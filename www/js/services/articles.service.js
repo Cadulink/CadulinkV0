@@ -15,7 +15,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             return subArticles;
         },
         get: function(articleId) {
-            return null;
+          return null;
         },
         getAuthor: function(personId) {
             return people[personId];
@@ -31,6 +31,17 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               return retour;
             }
           }
+        },
+        delete: function(articleId) {
+          for( i=0 ; i<=articles.length;i++){
+            if (articles[i].id == articleId){
+              console.log("AAA" + i);
+              // delete articles[i];
+              articles.splice(i, 1);
+              window.localStorage.setItem('articles',JSON.stringify(articles));
+              return true;
+            }
+          }
         }
-    };
-});
+      };
+    });

@@ -19,7 +19,6 @@ angular.module('starter.controllers', ['ngRoute'])
         return person.firstName + " " + person.lastName;
     };
 })
-
 //One article page
 .controller('AfficherCtrl', function($scope, $stateParams, ArticleService){
       $scope.articles = ArticleService.getByArticle($stateParams.articleId);
@@ -28,7 +27,13 @@ angular.module('starter.controllers', ['ngRoute'])
           return person.firstName + " " + person.lastName;
       }
 })
-
+// delete article
+.controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
+  var retour = ArticleService.delete($stateParams.articleId);
+  if(retour == true) {
+    $scope.text = "Article " + $stateParams.articleId + " supprimé";
+  }
+})
 //Profile pages
 .controller('PersonCtrl', function($scope, $stateParams, PersonService) {
     if($stateParams.personId == "") {
