@@ -20,8 +20,13 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         getAuthor: function(personId) {
             return people[personId];
         },
-        getByArticle: function(id){
-          return articles[id];
+        getByArticle: function(articleId){
+          for(var i = 0; i < articles.length; i++)
+          {
+            if(articles[i].id == articleId) {
+              return articles[i];
+            }
+          }
         },
         getPreview: function(articleId){
           for(var i = 0; i < articles.length; i++)
