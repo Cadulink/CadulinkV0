@@ -1,0 +1,22 @@
+<ion-view view-title="Community Page Edit">
+    <ion-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button></ion-nav-back-button>
+        </ion-nav-bar>
+        <div class="spacerVic"></div>
+        <div class="item item-avatar">
+            <img src="img/caducee.jpg">
+        </div>
+        <div class="list">
+            <label class="item item-input">
+                <input type="text" ng-model="community.label" placeholder="Titre">
+            </label>
+            <label class="item item-input">
+                <textarea ng-model="community.description" placeholder="Descripton"></textarea>
+            </label>
+            <div class="padding">
+                <button ng-click="goBack()" class="button button-block button-positive">Sauvegarder</button>
+        </div>
+        </div>
+    </ion-content>
+</ion-view>
