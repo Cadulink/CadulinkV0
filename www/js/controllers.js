@@ -2,12 +2,9 @@ angular.module('starter.controllers', [])
 
 //Articles pages
 .controller('ArticlesCtrl', function($scope, $stateParams, ArticleService) {
-    if($stateParams.communityId == "") {
+    $scope.articles = ArticleService.getByCommunity($stateParams.communityId);
+    if(typeof $stateParams.communityId === "undefined" || $stateParams.communityId == "") {
         $scope.articles = ArticleService.getAll();
-    }
-    else {
-        console.log($stateParams.communityId);
-        $scope.articles = ArticleService.getByCommunity($stateParams.communityId);
     }
 
     $scope.getAuthor = function(article) {
@@ -18,16 +15,21 @@ angular.module('starter.controllers', [])
 
 //Profile pages
 .controller('PersonCtrl', function($scope, $stateParams, PersonService) {
-    if($stateParams.personId == "") {
-        $stateParams.personId = JSON.parse(window.localStorage.getItem('userId'));
+    if(typeof $stateParams.personId === "undefined") {
+        $stateParams.personId = userId;
     }
     $scope.PersonService = PersonService;
     $scope.person = PersonService.get($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);
+    $scope.joinCommunity = PersonService.joinCommunity;
+    $scope.quitCommunity = PersonService.quitCommunity;
 })
 
 //Community pages
 .controller('CommunityCtrl', function($scope, $stateParams, CommunityService) {
+    if($stateParams.communityId == "") {
+        $stateParams.communityId = 1;
+    }
     $scope.community = CommunityService.get($stateParams.communityId);
     $scope.communities = CommunityService.getCommunities($stateParams.communityId);
 })

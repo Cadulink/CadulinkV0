@@ -24,6 +24,14 @@
        <p>Animateur : </p>
        <h2>Sebastien VELLUZ</h2>
     </div>
+    <div ng-controller="PersonCtrl">
+        <div ng-if="person.communities.indexOf(community.id) == -1">
+            <button ng-click="joinCommunity(person.id, community.id)" class="button button-positive button-block">join</button>
+        </div>
+        <div ng-if="person.communities.indexOf(community.id) != -1">
+            <button ng-click="quitCommunity(person.id, community.id)" class="button button-positive button-block">quit</button>
+        </div>
+    </div>
     <div ng-controller="ArticlesCtrl">
 
     </div>

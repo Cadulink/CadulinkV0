@@ -70,6 +70,7 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
 
     // profil
     .state('profil', {
+        cache: false,
         url: '/profil/:personId',
         templateUrl: 'templates/profil.html',
         controller: 'PersonCtrl'

@@ -2,7 +2,7 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
 
 .factory('PersonService', function() {
     return {
-        get: function(personId=0) {
+        get: function(personId) {
             return people[personId];
         },
         getCommunities(personId){
@@ -23,7 +23,7 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
             }
         },
         joinCommunity(personId,communityId) {
-            people[pesonId].communities.push(communityId);
+            people[personId].communities.push(communityId);
             return true;
         },
         quitCommunity(personId,communityId) {
