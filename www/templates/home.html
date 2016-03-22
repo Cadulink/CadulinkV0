@@ -2,9 +2,9 @@
     <ion-content padding="true">
         <!-- sidebar -->
         <!-- Actualité -->
-        <div ng-app="starter.controllers" ng-controller="ArticlesCtrl" class="list card">
-            <div ng-repeat="article in articles">
-                <div class="item item-body">
+        <div ng-app="starter.controllers" ng-controller="ArticlesCtrl">
+            <div class="list card" ng-repeat="article in articles">
+                <div class="item item-divider item-text-wrap">
                     <h1>{{article.title}}</h1>
                 </div>
                 <div class="item item-avatar">
@@ -17,10 +17,8 @@
                     <a ui-sref="delete({articleId: article.id})" class="button button-positive button-block">delete</a>
                     <a ui-sref="edit" class="button button-positive button-block">edit</a>
                     <button ui-sref="delete({articleId: article.id})" class="button button-positive button-block">delete</button>
-
                 </div>
             </div>
-            <hr>
-
+        </div>
     </ion-content>
 </ion-view>

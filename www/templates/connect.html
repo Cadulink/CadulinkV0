@@ -1,0 +1,23 @@
+<ion-view hide-nav-bar="true" view-title="">
+  <ion-content padding="true">
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+    <img ng-src="img/medium-logo.png" alt="Logo" class="col-offset-20" />
+    <div class="spacer"></div>
+    <div ng-controller="LogCtrl">
+      <form class="list" ng-submit="submit(email, password)">
+        <label class="item item-input">
+          <input type="email" ng-model="email" placeholder="Email" required>
+        </label>
+        <label class="item item-input">
+          <input type="password" ng-model="password" placeholder="Mot de passe" required>
+        </label>
+        <button class="button button-positive button-block">Se connecter</button>
+      </form>
+    </div>
+    <div ng-controller="RegisterCtrl">
+      <button ng-click="OpenModal()" class="button button-positive button-block">S'inscrire</button>
+    </div>
+    <a ui-sref="forgotPassword">Mot de passe oublié</a>
+  </ion-content>
+</ion-view>

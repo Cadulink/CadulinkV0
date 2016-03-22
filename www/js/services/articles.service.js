@@ -18,7 +18,24 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
           return null;
         },
         getAuthor: function(personId) {
-          return people[personId];
+            return people[personId];
+        },
+        getByArticle: function(articleId){
+          for(var i = 0; i < articles.length; i++)
+          {
+            if(articles[i].id == articleId) {
+              return articles[i];
+            }
+          }
+        },
+        getPreview: function(articleId){
+          for(var i = 0; i < articles.length; i++)
+          {
+            if(articles[i].id == articleId) {
+              retour = articles[i].content.substring(0,300) + '...<a>Lire la suite </a></p>';
+              return retour;
+            }
+          }
         },
 // FUNCTION edit un article
         new: function(communityId,authorId,newTitle,newContent) {
@@ -53,8 +70,6 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               return true;
             }
           }
-
-          // window.alert("articles[1");
         }
       };
     });
