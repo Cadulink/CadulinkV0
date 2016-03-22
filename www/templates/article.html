@@ -3,7 +3,8 @@
         <!-- sidebar -->
 
         <!-- Actualité -->
-        <div ng-app="starter.controllers" ng-controller="AfficherCtrl" class="list card">
+        <div ng-app="starter.controllers">
+          <div ng-controller="AfficherCtrl" class="list card">
                 <div class="item item-body">
                     <h1>{{articles.title}}</h1>
                 </div>
@@ -15,6 +16,21 @@
                 <div class="item item-body">
                     <div ng-bind-html="articles.content"></div>
                 </div>
+          </div>
+          <div ng-controller="CommentCtrl">
+              <div class="item item-text-wrap">
+                <p>Commentaire</p>
+                <hr>
+
+            <div class="item item-text-wrap" ng-repeat="comment in comments">
+                <a ui-sref="profil({personId: articles.authorId})">par {{getAuthor(comment)}}</a>
+                  <hr>
+                <div ng-bind-html="comment.content"></div>
             </div>
+            <button ng-click>Ajouter un commentaire</button>
+          </div>
+
+        </div>
+      </div>
     </ion-content>
 </ion-view>

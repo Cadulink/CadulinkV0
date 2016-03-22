@@ -14,16 +14,27 @@ angular.module('starter.controllers', ['ngRoute'])
     $scope.getAuthor = function(article) {
         var person =  ArticleService.getAuthor(article.authorId);
         return person.firstName + " " + person.lastName;
-    };
+    }
+    $scope.nbrComment = function(article){
+      var nbrComments = ArticleService.nbrComment(article.authorId);
+      return nbrComments.length;
+    }
 })
+
 //One article page
 .controller('AfficherCtrl', function($scope, $stateParams, ArticleService){
       $scope.articles = ArticleService.getByArticle($stateParams.articleId);
       $scope.getAuthor = function(article) {
           var person =  ArticleService.getAuthor(article.authorId);
           return person.firstName + " " + person.lastName;
-      }
+      };
 })
+//Comment on page
+.controller('CommentCtrl', function($scope, $stateParams, CommentService){
+
+      $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
+})
+
 // delete article
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
   var retour = ArticleService.delete($stateParams.articleId);

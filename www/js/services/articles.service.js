@@ -1,4 +1,4 @@
-angular.module('articles.service', ['articles.data', 'communities.data', 'people.data'])
+angular.module('articles.service', ['articles.data', 'communities.data', 'people.data', 'comments.data'])
 
 .factory('ArticleService', function() {
     return {
@@ -27,6 +27,16 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               return articles[i];
             }
           }
+        },
+        nbrComment: function(articleId){
+           var nbrComment = [];
+           comments.forEach(function(element, key, array){
+             if(element.articleId == articleId){
+                 nbrComment.push(element);
+                 console.log(nbrComment);
+             }
+           })
+           return nbrComment;
         },
         getPreview: function(articleId){
           for(var i = 0; i < articles.length; i++)

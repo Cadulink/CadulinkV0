@@ -52,4 +52,3 @@ var people = [
         communities: [0,3,4]
     },
 ];
-
