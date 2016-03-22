@@ -1,0 +1,20 @@
+<ion-view hide-nav-bar="false" view-title="Cadulink">
+    <ion-content padding="true">
+        <!-- sidebar -->
+
+        <!-- Actualité -->
+        <div ng-app="starter.controllers" ng-controller="AfficherCtrl" class="list card">
+                <div class="item item-body">
+                    <h1>{{articles.title}}</h1>
+                </div>
+                <div class="item item-avatar">
+                    <img src="img/sebatien.jpg">
+                    <a ui-sref="profil({personId: articles.authorId})">par {{getAuthor(articles)}}</a>
+                    <p>le {{articles.date}}</p>
+                </div>
+                <div class="item item-body">
+                    <div ng-bind-html="articles.content"></div>
+                </div>
+            </div>
+    </ion-content>
+</ion-view>

@@ -3,20 +3,20 @@
         <!-- sidebar -->
 
         <!-- Actualité -->
-        <div ng-app="starter.controllers" ng-controller="ArticlesCtrl" class="list card">
-            <div ng-repeat="article in articles">
-                <div class="item item-body">
+        <div ng-app="starter.controllers" ng-controller="ArticlesCtrl">
+            <div class="list card" ng-repeat="article in articles">
+                <div class="item item-divider item-text-wrap">
                     <h1>{{article.title}}</h1>
                 </div>
-                <div class="item item-avatar">
-                    <img src="img/sebatien.jpg">
-                    <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
-                    <p>le {{article.date}}</p>
-                </div>
-                <div class="item item-body">
-                    <div ng-bind-html="article.content"></div>
-                </div>
+                    <div class="item item-avatar">
+                        <img src="img/sebatien.jpg">
+                        <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
+                        <p>le {{article.date}}</p>
+                    </div>
+                    <div class="item item-body">
+                        <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
+                    </div>
             </div>
-            <hr>
+        </div>
     </ion-content>
 </ion-view>
