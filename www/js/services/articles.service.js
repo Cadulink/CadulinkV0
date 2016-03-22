@@ -37,12 +37,34 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             }
           }
         },
+        // FUNCTION new article
+        new: function(communityId,authorId,newTitle,newContent) {
+          if (newTitle == "") {
+            alert("Le titre est obligatoire");
+          }
+          else {
+            var newId=(articles.length)+1;
+            var articleDate=Date.now();
+            var newArticle= {
+              "id": newId,
+              "communityId":communityId,
+              "authorId": userId,
+              "title": newTitle,
+              "content": newContent,
+              "date": articleDate,
+            }
+            articles.push(newArticle);
+            console.log(articles);
+          }
+        },
+        // fin de la function
+        // FUNCTION delete article
         delete: function(articleId) {
           for( i=0 ; i<=articles.length;i++){
             if (articles[i].id == articleId){
-              console.log("AAA" + i);
               // delete articles[i];
               articles.splice(i, 1);
+              console.log(articles);
               window.localStorage.setItem('articles',JSON.stringify(articles));
               return true;
             }

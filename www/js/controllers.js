@@ -24,7 +24,13 @@ angular.module('starter.controllers', ['ngRoute'])
           return person.firstName + " " + person.lastName;
       }
 })
-// delete article
+// newArticle article
+.controller('NewCtrl', function($scope, $stateParams, ArticleService){
+    $scope.submit = function(title , content) {
+        ArticleService.new(0,userId,title,content);
+    };
+})
+// delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
   var retour = ArticleService.delete($stateParams.articleId);
   if(retour == true) {

@@ -1,7 +1,6 @@
 <ion-view hide-nav-bar="false" view-title="Cadulink">
     <ion-content padding="true">
         <!-- sidebar -->
-
         <!-- Actualité -->
         <div ng-app="starter.controllers" ng-controller="ArticlesCtrl">
             <div class="list card" ng-repeat="article in articles">
@@ -16,6 +15,7 @@
                     <div class="item item-body">
                         <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                     </div>
+                    <a ui-sref="delete({articleId: article.id})" class="positive">delete</a>
             </div>
         </div>
     </ion-content>

@@ -76,7 +76,13 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/profil.html',
         controller: 'PersonCtrl'
     })
-// delete
+    // new
+    .state('newArticle', {
+      url: '/newArticle',
+      templateUrl: 'templates/newArticle.html',
+      controller: 'NewCtrl'
+    })
+    // delete
     .state('delete', {
         url: '/delete/:articleId',
         templateUrl: 'templates/delete.html',
@@ -89,7 +95,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/photo.html'
     });
 
-    $urlRouterProvider.otherwise('/connect')
+    $urlRouterProvider.otherwise('/newArticle')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
