@@ -4,7 +4,7 @@ var articles = [
   {
     id:1,
     communityId:1,
-    authorId: 2,
+    authorId: 0,
     title:"Un test salivaire pour détecter le cancer : info ou intox ?",
     content: "<p>Si la decouverte se confirme, elle pourrait revolutionner le depistage du cancer. Des scientifiques sont en train de developper un test salivaire utilisable a domicile permettant de detecter la presence d'un cancer en une dizaine de minutes, rapporte le Telegraph. Ce test salivaire serait precis a 100% et si simple a utiliser qu'il pourrait etre mis en vente libre en pharmacie.Une simple goutte de salive en guise de test</br>Selon David Wong, un professeur d'oncologie a l'universite de Californie, il est possible de detecter des tumeurs lorsqu'elles circulent dans les fluides corporels. Les tests menes par ce scientifique ont demontre qu'une simple goutte de salive contient assez de donnees pour permettre d'etablir un diagnostic des le debut du developpement de la tumeur, assure-t-il. Actuellement, les scientifiques ne peuvent utiliser que les tests sanguins pour detecter un cancer, s'ils ont deja effectue une biopsie pour reperer une tumeur.</br>'Detecter le cancer le plus tot possible est crucial. Avec ce test, cela peut-etre fait par le patient lui-meme, chez lui, chez le dentiste, ou en pharmacie', souligne encore David Wong, qui espere voir le test arriver en Grande-Bretagne dans la decennie, voire plus tot.</p> ",
     picture:'',

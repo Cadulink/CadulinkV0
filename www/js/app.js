@@ -94,6 +94,8 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
       // controller: 'NewCtrl'
     })
 
+// >>>>>>> a2f98eb... Function delete pour les articles
+
     // photo api
     .state('photo', {
         url: '/photo',

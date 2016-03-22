@@ -39,9 +39,9 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             articles.push(newArticle);
           }
         },
-        edit: function(articleId) {
-
-        },
+        // edit: function(articleId) {
+        //
+        // },
 // function delete pour un article
         delete: function(articleId) {
           for( i=0 ; i<=articles.length;i++){
@@ -53,6 +53,8 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               return true;
             }
           }
+
+          // window.alert("articles[1");
         }
       };
     });
