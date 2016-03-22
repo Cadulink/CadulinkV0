@@ -65,6 +65,8 @@ angular.module('starter.controllers', ['ngRoute'])
     $scope.modal = modal;
   });
 
+  $scope.title = 'Inscription';
+
   $scope.OpenModal = function(){
     $scope.modal.show();
   };
@@ -78,6 +80,11 @@ angular.module('starter.controllers', ['ngRoute'])
     //var people = JSON.parse(window.localStorage.getItem('people'));
     var id = PersonService.get().length;
     $stateParams.personId = id;
+
+    var userId = JSON.parse(localStorage.getItem('userId'));
+    userId = id;
+    window.localStorage.setItem('userId', JSON.stringify(userId));
+
     PersonService.create(email, password, firstName, lastName, profession, practiceLocation);
     console.log(PersonService.getId(id).email);
     //window.localStorage.setItem('userId', JSON.stringify(people.length));
@@ -89,12 +96,17 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 
 .controller('LogCtrl', function($scope, $location, PersonService) {
+
   $scope.submit = function(email, password) {
+    //var people = JSON.parse(localStorage.getItem('people'));
     var error = true;
 
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
-        $location.path('home/1');
+        var userId = JSON.parse(localStorage.getItem('userId'));
+        userId = i;
+        window.localStorage.setItem('userId', JSON.stringify(userId));
+        $location.path('home/' + userId);
         error = false;
       }
     }
@@ -113,6 +125,17 @@ angular.module('starter.controllers', ['ngRoute'])
     $scope.modal = modal;
   });
 
+  var userId = JSON.parse(localStorage.getItem('userId'));
+
+  $scope.email = PersonService.getId(userId).email;
+  $scope.password = PersonService.getId(userId).password;
+  $scope.lastName = PersonService.getId(userId).lastName;
+  $scope.firstName = PersonService.getId(userId).firstName;
+  $scope.profession = PersonService.getId(userId).profession;
+  $scope.practiceLocation = PersonService.getId(userId).practiceLocation;
+
+  $scope.title = 'Editer son profil';
+
   $scope.OpenModal = function(){
     $scope.modal.show();
   };
@@ -120,5 +143,15 @@ angular.module('starter.controllers', ['ngRoute'])
   $scope.CloseModal = function(){
     $scope.modal.hide();
   };
+
+  $scope.submit = function(email, password, firstName, lastName, profession, practiceLocation) {
+
+    PersonService.edit(userId, email, password, firstName, lastName, profession, practiceLocation);
+
+    console.log(PersonService.getId(userId).email);
+
+    $scope.modal.hide();
+
+  }
 
 });

@@ -115,5 +115,5 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
 });
 
-var userId = 0;
+var userId = "";
 window.localStorage.setItem("userId", JSON.stringify(userId));
