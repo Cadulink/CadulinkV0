@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers','starter.services','articles.service','communities.service','people.service'])
+var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'starter.controllers','starter.services','articles.service','communities.service','people.service'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -51,28 +51,36 @@ var exampleApp = angular.module('starter', ['ionic', 'ngCordova', 'starter.contr
     })
     // community
     .state('community', {
+        cache: false,
         url: '/community/:communityId',
         templateUrl: 'templates/community.html',
         controller: 'CommunityCtrl'
     })
-
-    // article
-    /*.state('article', {
-        url: '/article',
-        templateUrl: 'templates/article.html'
+    // community edit
+    .state('communityEdit', {
+        url: '/communityEdit/:communityId',
+        templateUrl: 'templates/communityEdit.html',
+        controller: 'CommunityCtrl'
     })
 
-    // agenda
-    .state('agenda', {
-        url: '/agenda',
-        templateUrl: 'templates/agenda.html'
-    })*/
-
+    // article
+    .state('article', {
+        url: '/article/:articleId',
+        templateUrl: 'templates/article.html',
+        controller:'AfficherCtrl'
+    })
     // profil
     .state('profil', {
+        cache: false,
         url: '/profil/:personId',
         templateUrl: 'templates/profil.html',
         controller: 'PersonCtrl'
+    })
+// delete
+    .state('delete', {
+        url: '/delete/:articleId',
+        templateUrl: 'templates/delete.html',
+        controller: 'DeleteCtrl'
     })
 
     // photo api
@@ -107,5 +115,5 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
 });
 
-var userId = 0;
+var userId = '';
 window.localStorage.setItem("userId", JSON.stringify(userId));
