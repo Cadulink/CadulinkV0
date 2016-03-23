@@ -103,10 +103,9 @@ angular.module('starter.controllers', ['ngRoute'])
 
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
-        var userId = JSON.parse(localStorage.getItem('userId'));
         userId = i;
         window.localStorage.setItem('userId', JSON.stringify(userId));
-        $location.path('home/' + userId);
+        $location.path('home/');
         error = false;
       }
     }
