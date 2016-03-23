@@ -45,6 +45,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
 
     // home
     .state('home', {
+      cache: false,
         url: '/home/:communityId',
         templateUrl: 'templates/home.html',
         controller: 'ArticlesCtrl'
@@ -77,7 +78,13 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/profil.html',
         controller: 'PersonCtrl'
     })
-// delete
+    // new
+    .state('newArticle', {
+      url: '/newArticle',
+      templateUrl: 'templates/newArticle.html',
+      controller: 'NewCtrl'
+    })
+    // delete
     .state('delete', {
         url: '/delete/:articleId',
         templateUrl: 'templates/delete.html',
@@ -87,7 +94,12 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         url: '/article/:articleId/comment',
         templateUrl: 'templates/addComment.html'
     })
-
+    // delete
+    .state('edit', {
+        url: '/edit/:articleId',
+        templateUrl: 'templates/articleEdit.html',
+        controller: 'EditArticleCtrl'
+    })
     // photo api
     .state('photo', {
         url: '/photo',

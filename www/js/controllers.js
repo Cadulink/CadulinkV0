@@ -51,7 +51,19 @@ angular.module('starter.controllers', ['ngRoute'])
     }
 
 })
-// delete article
+// newArticle article
+.controller('NewCtrl', function($scope, $stateParams, ArticleService){
+    $scope.submit = function(title , content) {
+        ArticleService.new(0,userId,title,content);
+    }
+})
+// edit article
+.controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
+    $scope.submit = function(title , content) {
+        ArticleService.edit(0,userId,title,content);
+    }
+})
+// delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
   var retour = ArticleService.delete($stateParams.articleId);
   if(retour == true) {
@@ -137,7 +149,6 @@ angular.module('starter.controllers', ['ngRoute'])
       alert("Mauvais login/mot de passe");
     }
   }
-
 })
 
 .controller('EditProfilCtrl', function($scope, $ionicModal, PersonService){
@@ -176,5 +187,4 @@ angular.module('starter.controllers', ['ngRoute'])
     $scope.modal.hide();
 
   }
-
 });
