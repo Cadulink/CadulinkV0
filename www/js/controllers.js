@@ -32,6 +32,7 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 // edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
+  $scope.article = ArticleService.get($stateParams.articleId);
     $scope.submit = function(title , content) {
         ArticleService.edit(articleId,0,userId,title,content);
     }
