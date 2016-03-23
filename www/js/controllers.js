@@ -33,7 +33,7 @@ angular.module('starter.controllers', ['ngRoute'])
 // edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
     $scope.submit = function(title , content) {
-        ArticleService.edit(0,userId,title,content);
+        ArticleService.edit(articleId,0,userId,title,content);
     }
 })
 // delete

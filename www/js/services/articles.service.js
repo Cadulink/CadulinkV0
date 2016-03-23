@@ -71,19 +71,12 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             }
           }
         },
-        // FUNCTION new article
+        // FUNCTION edit article
         edit: function(communityId,authorId,newTitle,newContent) {
           if ((newContent=="") && (newTitle == "")) {
             alert("Veuillez remplir les champs obligatoire");
           }
-          else if (newTitle == "") {
-            alert("Le titre est obligatoire");
-          }
-          else if (newContent="") {
-            alert("Le contenu est obligatoire");
-          }
           else {
-            var newId=(articles.length)+1;
             var articleDate=new Date(Date.now());
             articleDate = articleDate.toLocaleDateString();
             var newArticle= {
@@ -94,6 +87,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               "content": newContent,
               "date": articleDate,
             }
+            articles.splice(i, 1);
             articles.push(newArticle);
             console.log(articles);
           }

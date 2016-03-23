@@ -64,4 +64,21 @@ form.register label {
   padding-right: 10px;
 }
 
-h1 { font-size: 1.1em; }
+h1 {
+  font-size: 1.1em;
+}
+.floating_right{
+  float: right;
+  font-size: 13px;
+  font-family: cursive;
+}
+
+.delete{
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+i.ion-home {
+  font-size: 60px;
+}
