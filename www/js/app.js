@@ -32,6 +32,11 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
             url: '/connect',
             templateUrl: 'templates/connect.html'
         })
+    // menu
+    .state('app', {
+        url: '/app',
+        templateUrl: 'templates/menu.html'
+    })
     // register
     .state('register', {
         url: '/register',
@@ -44,49 +49,77 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
     })
 
     // home
-    .state('home', {
+    .state('app.home', {
         url: '/home/:communityId',
-        templateUrl: 'templates/home.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/home.html'
+            }
+        },
         controller: 'ArticlesCtrl'
     })
     // community
-    .state('community', {
+    .state('app.community', {
         cache: false,
         url: '/community/:communityId',
-        templateUrl: 'templates/community.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/community.html'
+            }
+        },
         controller: 'CommunityCtrl'
     })
     // community edit
-    .state('communityEdit', {
+    .state('app.communityEdit', {
         url: '/communityEdit/:communityId',
-        templateUrl: 'templates/communityEdit.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/communityEdit.html'
+            }
+        },
         controller: 'CommunityCtrl'
     })
 
     // article
-    .state('article', {
+    .state('app.article', {
         url: '/article/:articleId',
-        templateUrl: 'templates/article.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/article.html'
+            }
+        },
         controller:'AfficherCtrl'
     })
     // profil
-    .state('profil', {
+    .state('app.profil', {
         cache: false,
         url: '/profil/:personId',
-        templateUrl: 'templates/profil.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/profil.html'
+            }
+        },
         controller: 'PersonCtrl'
     })
 // delete
-    .state('delete', {
+    .state('app.delete', {
         url: '/delete/:articleId',
-        templateUrl: 'templates/delete.html',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/delete.html'
+            }
+        },
         controller: 'DeleteCtrl'
     })
 
     // photo api
-    .state('photo', {
+    .state('app.photo', {
         url: '/photo',
-        templateUrl: 'templates/photo.html'
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/photo.html'
+            }
+        }
     });
 
     $urlRouterProvider.otherwise('/connect')

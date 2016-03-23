@@ -90,12 +90,12 @@ angular.module('starter.controllers', ['ngRoute'])
     //window.localStorage.setItem('userId', JSON.stringify(people.length));
     //window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
-    $location.path('profil/'+$stateParams.personId);
+    $location.path('app/profil/'+$stateParams.personId);
   };
 
 })
 
-.controller('LogCtrl', function($scope, $location, PersonService) {
+.controller('LogCtrl', function($scope, $location, $stateParams, PersonService) {
 
   $scope.submit = function(email, password) {
     //var people = JSON.parse(localStorage.getItem('people'));
@@ -103,10 +103,12 @@ angular.module('starter.controllers', ['ngRoute'])
 
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
+
         var userId = JSON.parse(localStorage.getItem('userId'));
         userId = i;
         window.localStorage.setItem('userId', JSON.stringify(userId));
-        $location.path('home/' + userId);
+        $stateParams.personId = userId;
+        $location.path('app/home/' + userId);
         error = false;
       }
     }
@@ -154,4 +156,14 @@ angular.module('starter.controllers', ['ngRoute'])
 
   }
 
+})
+
+.controller('MenuCtrl', function($scope, $stateParams, $location){
+  var userId = JSON.parse(localStorage.getItem('userId'));
+  $scope.home = function(){
+    $location.path('app/home/'+userId);
+  }
+  $scope.profil = function(){
+    $location.path('app/profil/'+userId);
+  }
 });
