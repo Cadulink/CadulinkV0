@@ -75,6 +75,7 @@ angular.module('starter.controllers', ['ngRoute'])
     if(typeof $stateParams.personId === "undefined" || $stateParams.personId == "") {
         $stateParams.personId = userId;
     }
+    $scope.userId = userId;
     $scope.PersonService = PersonService;
     $scope.person = PersonService.getId($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);

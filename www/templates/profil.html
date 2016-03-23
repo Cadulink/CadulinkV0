@@ -5,7 +5,7 @@
                 <div class="item item-text-wrap item-avatar item-button-right">
                     <img src="img/SVelluz.jpg">
                     {{person.firstName + ' ' + person.lastName}}
-                    <button class="button button-positive" ng-controller="EditProfilCtrl" ng-click="OpenModal()"><i class="ion-edit"></i></button>
+                    <button ng-if="person.id == userId" class="button button-positive" ng-controller="EditProfilCtrl" ng-click="OpenModal()"><i class="ion-edit"></i></button>
                 </div>
             </div>
             <div class="card">
