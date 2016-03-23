@@ -72,7 +72,7 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 //Profile pages
 .controller('PersonCtrl', function($scope, $stateParams, PersonService) {
-    if(typeof $stateParams.personId === "undefined") {
+    if(typeof $stateParams.personId === "undefined" || $stateParams.personId == "") {
         $stateParams.personId = userId;
     }
     $scope.PersonService = PersonService;
@@ -84,6 +84,7 @@ angular.module('starter.controllers', ['ngRoute'])
 
 //Community pages
 .controller('CommunityCtrl', function($scope, $stateParams, $ionicHistory, CommunityService) {
+    console.log("cId" + $stateParams.communityId);
     if($stateParams.communityId == "") {
         $stateParams.communityId = 1;
     }
@@ -117,8 +118,8 @@ angular.module('starter.controllers', ['ngRoute'])
   $scope.submit = function(email, password, lastName, firstName, profession, practiceLocation){
 
     //var people = JSON.parse(window.localStorage.getItem('people'));
-    id = PersonService.get().length;
-    userId = JSON.parse(localStorage.getItem('userId'));
+    var id = PersonService.get().length;
+    $stateParams.personId = id;
     userId = id;
 
     PersonService.create(email, password, firstName, lastName, profession, practiceLocation);
@@ -126,12 +127,12 @@ angular.module('starter.controllers', ['ngRoute'])
     //window.localStorage.setItem('userId', JSON.stringify(people.length));
     //window.localStorage.setItem('people', JSON.stringify(people));
     $scope.modal.hide();
-    $location.path('profil/'+$stateParams.personId);
+    $location.path('app/profil/'+$stateParams.personId);
   };
 
 })
 
-.controller('LogCtrl', function($scope, $location, PersonService) {
+.controller('LogCtrl', function($scope, $location, $stateParams, PersonService) {
 
   $scope.submit = function(email, password) {
     //var people = JSON.parse(localStorage.getItem('people'));
@@ -140,9 +141,9 @@ angular.module('starter.controllers', ['ngRoute'])
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
         error = false;
-        userId = people[i].id;
-        localStorage.setItem(userId, JSON.stringify('userId'));
-        $location.path('home/');
+        userId = i;
+        localStorage.setItem("userId", JSON.stringify(userId));
+        $location.path('app/home/');
       }
     }
     if(error) {
@@ -152,14 +153,11 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 
 .controller('EditProfilCtrl', function($scope, $ionicModal, PersonService){
-
   $ionicModal.fromTemplateUrl('templates/register.html', {
     scope: $scope
   }).then(function(modal) {
     $scope.modal = modal;
   });
-
-  var userId = JSON.parse(localStorage.getItem('userId'));
 
   $scope.email = PersonService.getId(userId).email;
   $scope.password = PersonService.getId(userId).password;
@@ -186,5 +184,11 @@ angular.module('starter.controllers', ['ngRoute'])
 
     $scope.modal.hide();
 
+  }
+})
+
+.controller('MenuCtrl', function($scope, $stateParams, $location){
+  $scope.profil = function(){
+    $location.path('app/profil/'+userId);
   }
 });

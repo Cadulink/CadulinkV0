@@ -26,7 +26,7 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
               'lastName': lastName,
               'profession': profession,
               'practiceLocation': practiceLocation,
-              'communities': [1,3]
+              'communities': [2,3]
             });
         },
         edit: function(personId, email, password, firstName, lastName, profession, practiceLocation){

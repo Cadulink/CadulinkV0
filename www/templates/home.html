@@ -9,11 +9,11 @@
                 </div>
                     <div class="item item-avatar">
                         <img src="img/sebatien.jpg">
-                        <a ui-sref="profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
+                        <a ui-sref="app.profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
                         <p>le {{article.date}}</p>
                     </div>
                     <div class="item item-body">
-                        <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
+                        <div ui-sref="app.article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                     </div>
                     <div>{{nbrComment(article)}} Commentaire</div>
                     <a ui-sref="delete({articleId: article.id})" class="positive">Delete</a>
