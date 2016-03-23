@@ -13,7 +13,7 @@
 }
 
 .scroll-content{
-  background-image: url("img/home-bckg.jpg");
+  background-image: url("../img/home-bckg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /*background-color: url("../img/bandeau-haut.jpg");*/
@@ -68,10 +68,10 @@ h1 { font-size: 1.1em; }
 
 .buttonArticle
 {
-  margin-left: 10px;
-  margin-top: 20px;
+  margin-left: 7px;
+  margin-top: 15px;
   margin-bottom: 15px;
-  border-radius: 10px;
+  border-bottom-right-radius: 10px;
   color:white;
   background-color: #0c60ee;
   border: none;
@@ -81,6 +81,33 @@ h1 { font-size: 1.1em; }
 {
   width: 97%;
   height: 30px;
-  margin: 10px;
+  margin: 7px;
   clear:both;
+  border: solid 1px grey;
+  border-bottom-right-radius: 10px;
+
+}
+
+.nbrcomment{
+  float: right;
+  width: auto;
+  margin-right:15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+.titreComment
+{
+    margin-top: 10px;
+    margin-left: 7px;
+}
+
+.float-left-img{
+  width: 60px;
+  height: 60px;
+  float: left;
+  border-radius: 35px;
+  border: solid 2px white;
+  margin-right: 15px;
 }

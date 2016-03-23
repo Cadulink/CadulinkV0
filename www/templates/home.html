@@ -6,7 +6,7 @@
         <div ng-app="starter.controllers" ng-controller="ArticlesCtrl">
             <div class="list card" ng-repeat="article in articles">
                 <div class="item item-divider item-text-wrap">
-                    <h1>{{article.title}}</h1>
+                    <h1 class='titre'>{{article.title}}</h1>
                 </div>
                     <div class="item item-avatar">
                         <img src="img/sebatien.jpg">
@@ -16,7 +16,7 @@
                     <div class="item item-body">
                         <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                     </div>
-                    <div>{{nbrComment(article)}} Commentaire</div>
+                    <div class='nbrcomment'>{{nbrComment(article)}} Commentaire</div>
             </div>
         </div>
     </ion-content>
