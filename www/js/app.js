@@ -26,120 +26,126 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
 
 
 .config(function($stateProvider, $urlRouterProvider) {
-    // connection
     $stateProvider
+        // menu
+        .state('app', {
+            url: '/app',
+            templateUrl: 'templates/menu.html'
+        })
+        // connection
         .state('connect', {
             url: '/connect',
             templateUrl: 'templates/connect.html'
         })
-    // menu
-    .state('app', {
-        url: '/app',
-        templateUrl: 'templates/menu.html'
-    })
-    // register
-    .state('register', {
-        url: '/register',
-        templateUrl: 'templates/register.html'
-    })
-    // mot de passe oublié
-    .state('forgotPassword', {
-        url: '/forgotPassword',
-        templateUrl: 'templates/forgotPassword.html'
-    })
-
-    // home
-    .state('app.home', {
-        url: '/home/:communityId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/home.html'
+        // register
+        .state('register', {
+            url: '/register',
+            templateUrl: 'templates/register.html'
+        })
+        // mot de passe oublié
+        .state('forgotPassword', {
+            url: '/forgotPassword',
+            templateUrl: 'templates/forgotPassword.html'
+        })
+        // home
+        .state('app.home', {
+            url: '/home/:communityId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/home.html'
+                }
+            },
+            controller: 'ArticlesCtrl'
+        })
+        // community
+        .state('app.community', {
+            cache: false,
+            url: '/community/:communityId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/community.html'
+                }
+            },
+            controller: 'CommunityCtrl'
+        })
+        // community edit
+        .state('app.communityEdit', {
+            url: '/communityEdit/:communityId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/communityEdit.html'
+                }
+            },
+            controller: 'CommunityCtrl'
+        })
+        // article
+        .state('app.article', {
+            url: '/article/:articleId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/article.html'
+                }
+            },
+            controller:'AfficherCtrl'
+        })
+        // profil
+        .state('app.profil', {
+            cache: false,
+            url: '/profil/:personId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/profil.html'
+                }
+            },
+            controller: 'PersonCtrl'
+        })
+        // new
+        .state('app.newArticle', {
+          url: '/newArticle',
+          templateUrl: 'templates/newArticle.html',
+          controller: 'NewCtrl'
+        })
+        // delete
+        .state('app.delete', {
+            url: '/delete/:articleId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/delete.html'
+                }
+            },
+            controller: 'DeleteCtrl'
+        })
+        .state('app.addComment',{
+            url: '/article/:articleId/comment',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/addComment.html',
+                }
+            },
+            controller: 'AddCommentCtrl'
+        })
+        // delete
+        .state('app.edit', {
+            url: '/edit/:articleId',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/articleEdit.html',
+                }
+            },
+            controller: 'EditArticleCtrl'
+        })
+        // photo api
+        .state('app.photo', {
+            url: '/photo',
+            views: {
+                'menuContent': {
+                    templateUrl: 'templates/photo.html'
+                }
             }
-        },
-        controller: 'ArticlesCtrl'
-    })
-    // community
-    .state('app.community', {
-        cache: false,
-        url: '/community/:communityId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/community.html'
-            }
-        },
-        controller: 'CommunityCtrl'
-    })
-    // community edit
-    .state('app.communityEdit', {
-        url: '/communityEdit/:communityId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/communityEdit.html'
-            }
-        },
-        controller: 'CommunityCtrl'
-    })
-
-    // article
-    .state('app.article', {
-        url: '/article/:articleId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/article.html'
-            }
-        },
-        controller:'AfficherCtrl'
-    })
-    // profil
-    .state('app.profil', {
-        cache: false,
-        url: '/profil/:personId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/profil.html'
-            }
-        },
-        controller: 'PersonCtrl'
-    })
-    // new
-    .state('app.newArticle', {
-      url: '/newArticle',
-      templateUrl: 'templates/newArticle.html',
-      controller: 'NewCtrl'
-    })
-    // delete
-    .state('app.delete', {
-        url: '/delete/:articleId',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/delete.html'
-            }
-        },
-        controller: 'DeleteCtrl'
-    })
-    .state('addComment',{
-        url: '/article/:articleId/comment',
-        templateUrl: 'templates/addComment.html',
-        controller: 'AddCommentCtrl'
-    })
-    // delete
-    .state('edit', {
-        url: '/edit/:articleId',
-        templateUrl: 'templates/articleEdit.html',
-        controller: 'EditArticleCtrl'
-    })
-    // photo api
-    .state('app.photo', {
-        url: '/photo',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/photo.html'
-            }
-        }
-    });
-
-    $urlRouterProvider.otherwise('/connect')
+        });
+        $urlRouterProvider.otherwise('/connect')
 });
+
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
     $scope.takePicture = function() {

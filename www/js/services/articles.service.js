@@ -15,7 +15,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             return subArticles;
         },
         get: function(articleId) {
-          return null;
+          return articles[articleId];
         },
         getAuthor: function(personId) {
             return people[personId];
@@ -72,7 +72,6 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         delete: function(articleId) {
           for( i=0 ; i<=articles.length;i++){
             if (articles[i].id == articleId){
-              // delete articles[i];
               articles.splice(i, 1);
               console.log("after deletion:" + articles);
               window.localStorage.setItem('articles',JSON.stringify(articles));

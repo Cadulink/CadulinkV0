@@ -1,28 +1,28 @@
 <ion-side-menus enable-menu-with-back-views="true">
-  <ion-side-menu-content>
-    <ion-nav-bar class="bar-positive">
-      <ion-nav-back-button></ion-nav-back-button>
-      <ion-nav-buttons side="right">
-        <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
-        </button>
-      </ion-nav-buttons>
-    </ion-nav-bar>
-    <ion-nav-view name="menuContent"></ion-nav-view>
-  </ion-side-menu-content>
-  <ion-side-menu side="right">
-    <ion-list ng-controller="MenuCtrl">
-      <ion-item menu-close="" ui-sref="app.home" class="positive">
-        Accueil
-      </ion-item>
-      <ion-item menu-close="" ng-click="profil()" class="positive">
-        Mon profil
-      </ion-item>
-      <ion-item menu-close="" ui-sref="app.newArticle" class="positive">
-        Rédiger un article
-      </ion-item>
-      <ion-item menu-close="" ui-sref="connect" class="positive">
-        D&#xE9;connexion
-      </ion-item>
-    </ion-list>
-  </ion-side-menu>
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="right">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="menuContent"></ion-nav-view>
+    </ion-side-menu-content>
+    <ion-side-menu side="right">
+        <ion-list ng-controller="MenuCtrl">
+            <ion-item menu-close="" ui-sref="app.home" class="positive">
+                Accueil
+            </ion-item>
+            <ion-item menu-close="" ng-click="profil()" class="positive">
+                Mon profil
+            </ion-item>
+            <ion-item menu-close="" ui-sref="app.newArticle" class="positive">
+                Rédiger un article
+            </ion-item>
+            <ion-item menu-close="" ui-sref="connect" class="positive">
+                D&#xE9;connexion
+            </ion-item>
+        </ion-list>
+    </ion-side-menu>
 </ion-side-menus>

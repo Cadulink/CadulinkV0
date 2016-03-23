@@ -59,12 +59,16 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 // edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
+    console.log($stateParams.articleId);
+    $scope.article = ArticleService.get($stateParams.articleId);
+    console.log($scope.article.content);
     $scope.submit = function(title , content) {
         ArticleService.edit(articleId,0,userId,title,content);
     }
 })
 // delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
+    console.log($stateParams.articleId);
   var retour = ArticleService.delete($stateParams.articleId);
   if(retour == true) {
     $scope.text = "Article " + $stateParams.articleId + " supprimé";
@@ -134,7 +138,6 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 
 .controller('LogCtrl', function($scope, $location, $stateParams, PersonService) {
-
   $scope.submit = function(email, password) {
     //var people = JSON.parse(localStorage.getItem('people'));
     var error = true;
@@ -178,13 +181,8 @@ angular.module('starter.controllers', ['ngRoute'])
   };
 
   $scope.submit = function(email, password, firstName, lastName, profession, practiceLocation) {
-
     PersonService.edit(userId, email, password, firstName, lastName, profession, practiceLocation);
-
-    console.log(PersonService.getId(userId).email);
-
     $scope.modal.hide();
-
   }
 })
 
