@@ -45,6 +45,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
 
     // home
     .state('home', {
+      cache: false,
         url: '/home/:communityId',
         templateUrl: 'templates/home.html',
         controller: 'ArticlesCtrl'
@@ -88,7 +89,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/delete.html',
         controller: 'DeleteCtrl'
     })
-    // edit
+    // delete
     .state('edit', {
         url: '/edit/:articleId',
         templateUrl: 'templates/articleEdit.html',

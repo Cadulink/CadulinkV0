@@ -28,13 +28,13 @@ angular.module('starter.controllers', ['ngRoute'])
 .controller('NewCtrl', function($scope, $stateParams, ArticleService){
     $scope.submit = function(title , content) {
         ArticleService.new(0,userId,title,content);
-    };
+    }
 })
-// newArticle article
+// edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
     $scope.submit = function(title , content) {
-        ArticleService.new(authorId,userId,title,content);
-    };
+        ArticleService.edit(0,userId,title,content);
+    }
 })
 // delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
