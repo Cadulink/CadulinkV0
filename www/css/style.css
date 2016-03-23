@@ -65,3 +65,22 @@ form.register label {
 }
 
 h1 { font-size: 1.1em; }
+
+.buttonArticle
+{
+  margin-left: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  color:white;
+  background-color: #0c60ee;
+  border: none;
+}
+
+#inputComment
+{
+  width: 97%;
+  height: 30px;
+  margin: 10px;
+  clear:both;
+}

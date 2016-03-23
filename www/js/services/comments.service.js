@@ -14,6 +14,21 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
           }
         })
         return commentsArticle;
+      },
+      getAuthor: function(personId) {
+          return people[personId];
+      },
+      addComment: function(articleId, content, userId){
+      var newComment =
+      {
+        'id' : comments.length,
+        'authorId' : userId,
+        'articleId': articleId,
+        'content' : "<p>"+content+"</p>"
       }
-    };
-});
+      console.log("Salut" +userId);
+      comments.push(newComment);
+      console.log(comments);
+		}
+  };
+  });

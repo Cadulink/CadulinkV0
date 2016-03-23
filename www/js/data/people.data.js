@@ -1,5 +1,7 @@
 angular.module('people.data', []);
 
+var currentUser;
+localStorage.setItem(currentUser,('currentUser'));
 var people = [
     {
         id: 0,

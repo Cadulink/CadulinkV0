@@ -65,6 +65,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
 
     // article
     .state('article', {
+        cache: false,
         url: '/article/:articleId',
         templateUrl: 'templates/article.html',
         controller:'AfficherCtrl'
@@ -81,6 +82,10 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         url: '/delete/:articleId',
         templateUrl: 'templates/delete.html',
         controller: 'DeleteCtrl'
+    })
+    .state('addComment',{
+        url: '/article/:articleId/comment',
+        templateUrl: 'templates/addComment.html'
     })
 
     // photo api
@@ -115,5 +120,5 @@ exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
 
 });
 
-var userId = 0;
+var userId = "";
 window.localStorage.setItem("userId", JSON.stringify(userId));

@@ -22,14 +22,13 @@
                 <p>Commentaire</p>
                 <hr>
 
-            <div class="item item-text-wrap" ng-repeat="comment in comments">
+            <div class="item item-text-wrap" ng-repeat="comment in comments" name="comment">
                 <a ui-sref="profil({personId: articles.authorId})">par {{getAuthor(comment)}}</a>
                   <hr>
                 <div ng-bind-html="comment.content"></div>
             </div>
-            <button ng-click>Ajouter un commentaire</button>
+            <button ng-click="switch()" class='buttonArticle'>Ajouter un commentaire</button>
           </div>
-
         </div>
       </div>
     </ion-content>

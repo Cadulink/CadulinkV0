@@ -29,11 +29,10 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
           }
         },
         nbrComment: function(articleId){
-           var nbrComment = [];
+           var nbrComment = 0;
            comments.forEach(function(element, key, array){
              if(element.articleId == articleId){
-                 nbrComment.push(element);
-                 console.log(nbrComment);
+                 nbrComment++;
              }
            })
            return nbrComment;
