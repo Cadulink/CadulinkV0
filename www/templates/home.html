@@ -15,7 +15,8 @@
                     <div class="item item-body">
                         <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                     </div>
-                    <a ui-sref="delete({articleId: article.id})" class="positive">delete</a>
+                    <a ui-sref="delete({articleId: article.id})" class="positive">Delete</a>
+                    <a ui-sref="edit({articleId: article.id})" class="positive">Edit</a>
             </div>
         </div>
     </ion-content>

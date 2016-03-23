@@ -88,7 +88,12 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/delete.html',
         controller: 'DeleteCtrl'
     })
-
+    // edit
+    .state('edit', {
+        url: '/edit/:articleId',
+        templateUrl: 'templates/articleEdit.html',
+        controller: 'EditArticleCtrl'
+    })
     // photo api
     .state('photo', {
         url: '/photo',

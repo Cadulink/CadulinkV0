@@ -30,6 +30,12 @@ angular.module('starter.controllers', ['ngRoute'])
         ArticleService.new(0,userId,title,content);
     };
 })
+// newArticle article
+.controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
+    $scope.submit = function(title , content) {
+        ArticleService.new(authorId,userId,title,content);
+    };
+})
 // delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
   var retour = ArticleService.delete($stateParams.articleId);
@@ -108,23 +114,5 @@ angular.module('starter.controllers', ['ngRoute'])
       alert("Mauvais login/mot de passe");
     }
   }
-
-})
-
-.controller('EditProfilCtrl', function($scope, $ionicModal, PersonService){
-
-  $ionicModal.fromTemplateUrl('templates/register.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
-  $scope.OpenModal = function(){
-    $scope.modal.show();
-  };
-
-  $scope.CloseModal = function(){
-    $scope.modal.hide();
-  };
 
 });
