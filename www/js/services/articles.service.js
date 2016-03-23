@@ -39,12 +39,19 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         },
         // FUNCTION new article
         new: function(communityId,authorId,newTitle,newContent) {
-          if (newTitle == "") {
+          if ((newContent="") && (newTitle == "")) {
+            alert("Veuillez remplir les champs obligatoire");
+          }
+          else if (newTitle == "") {
             alert("Le titre est obligatoire");
+          }
+          else if (newContent="") {
+            alert("Le contenu est obligatoire");
           }
           else {
             var newId=(articles.length)+1;
-            var articleDate=Date.now();
+            var articleDate=new Date(Date.now());
+            articleDate = articleDate.toLocaleDateString();
             var newArticle= {
               "id": newId,
               "communityId":communityId,

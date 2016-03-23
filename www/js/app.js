@@ -95,7 +95,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         templateUrl: 'templates/photo.html'
     });
 
-    $urlRouterProvider.otherwise('/newArticle')
+    $urlRouterProvider.otherwise('/connect')
 });
 // fonction appareil photo
 exampleApp.controller("ExampleController", function($scope, $cordovaCamera) {
