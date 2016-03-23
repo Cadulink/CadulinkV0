@@ -5,7 +5,7 @@
         <div ng-app="starter.controllers" ng-controller="ArticlesCtrl">
             <div class="list card" ng-repeat="article in articles">
                 <div class="item item-divider item-text-wrap">
-                    <h1>{{article.title}}</h1>
+                    <h1 class='titre'>{{article.title}}</h1>
                 </div>
                     <div class="item item-avatar">
                         <img src="img/sebatien.jpg">
@@ -14,8 +14,8 @@
                     </div>
                     <div class="item item-body">
                         <div ui-sref="app.article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
+                        <div class='nbrcomment'>{{nbrComment(article)}} commentaires</div>
                     </div>
-                    <div>{{nbrComment(article)}} Commentaire</div>
                     <div class="floating_right">
                       <a ui-sref="delete({articleId: article.id})" class="positive">Delete</a>
                       &nbsp;
