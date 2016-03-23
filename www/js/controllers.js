@@ -47,7 +47,7 @@ angular.module('starter.controllers', ['ngRoute'])
         var content = $scope.commentInput;
         var articleId = $stateParams.articleId;
         CommentService.addComment(articleId, content, userId);
-        $location.path('article/'+$stateParams.articleId);
+        $location.path("app/article/" + articleId);
     }
 
 })

@@ -119,7 +119,8 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
     })
     .state('addComment',{
         url: '/article/:articleId/comment',
-        templateUrl: 'templates/addComment.html'
+        templateUrl: 'templates/addComment.html',
+        controller: 'AddCommentCtrl'
     })
     // delete
     .state('edit', {
