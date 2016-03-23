@@ -13,7 +13,7 @@
 }
 
 .scroll-content{
-  background-image: url("img/home-bckg.jpg");
+  background-image: url("../img/home-bckg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   /*background-color: url("../img/bandeau-haut.jpg");*/
