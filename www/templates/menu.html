@@ -11,13 +11,13 @@
   </ion-side-menu-content>
   <ion-side-menu side="right">
     <ion-list ng-controller="MenuCtrl">
-      <ion-item menu-close="" ng-click="home()" class="positive">
+      <ion-item menu-close="" ui-sref="app.home" class="positive">
         Accueil
       </ion-item>
       <ion-item menu-close="" ng-click="profil()" class="positive">
         Mon profil
       </ion-item>
-      <ion-item menu-close="" ui-sref="app/newArticle" class="positive">
+      <ion-item menu-close="" ui-sref="app.newArticle" class="positive">
         Rédiger un article
       </ion-item>
       <ion-item menu-close="" ui-sref="connect" class="positive">

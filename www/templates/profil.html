@@ -21,7 +21,7 @@
                     <a ui-sref="CommunityDm">Communautés </a>
                 </div>
                 <ul class="item item-text-wrap center-text">
-                    <li ng-repeat="community in communities"><a ui-sref="community({communityId: community.id})">{{community.label}}</a></li>
+                    <li ng-repeat="community in communities"><a ui-sref="app.community({communityId: community.id})">{{community.label}}</a></li>
                 </ul>
             </div>
             <div class="card">

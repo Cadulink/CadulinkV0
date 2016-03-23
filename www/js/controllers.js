@@ -81,7 +81,6 @@ angular.module('starter.controllers', ['ngRoute'])
     var id = PersonService.get().length;
     $stateParams.personId = id;
 
-    var userId = JSON.parse(localStorage.getItem('userId'));
     userId = id;
     window.localStorage.setItem('userId', JSON.stringify(userId));
 
@@ -104,11 +103,10 @@ angular.module('starter.controllers', ['ngRoute'])
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
 
-        var userId = JSON.parse(localStorage.getItem('userId'));
         userId = i;
         window.localStorage.setItem('userId', JSON.stringify(userId));
         $stateParams.personId = userId;
-        $location.path('app/home/' + userId);
+        $location.path('app/home/');
         error = false;
       }
     }
@@ -159,10 +157,6 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 
 .controller('MenuCtrl', function($scope, $stateParams, $location){
-  var userId = JSON.parse(localStorage.getItem('userId'));
-  $scope.home = function(){
-    $location.path('app/home/'+userId);
-  }
   $scope.profil = function(){
     $location.path('app/profil/'+userId);
   }
