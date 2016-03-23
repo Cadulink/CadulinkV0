@@ -16,6 +16,7 @@
                     <div class="item item-body">
                         <div ui-sref="article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                     </div>
+                    <div>{{nbrComment(article)}} Commentaire</div>
             </div>
         </div>
     </ion-content>

@@ -14,15 +14,42 @@ angular.module('starter.controllers', ['ngRoute'])
     $scope.getAuthor = function(article) {
         var person =  ArticleService.getAuthor(article.authorId);
         return person.firstName + " " + person.lastName;
-    };
+    }
+    $scope.nbrComment = function(article){
+      var nbrComments = ArticleService.nbrComment(article.authorId);
+      return nbrComments;
+    }
 })
+
 //One article page
 .controller('AfficherCtrl', function($scope, $stateParams, ArticleService){
       $scope.articles = ArticleService.getByArticle($stateParams.articleId);
       $scope.getAuthor = function(article) {
           var person =  ArticleService.getAuthor(article.authorId);
           return person.firstName + " " + person.lastName;
+      };
+})
+
+//Comment on page
+.controller('CommentCtrl', function($scope, $stateParams, $location, CommentService){
+      $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
+      $scope.switch = function(){
+        $location.path("article/"+ $stateParams.articleId + "/comment")
       }
+      $scope.getAuthor = function(comment) {
+          var person =  CommentService.getAuthor(comment.authorId);
+          return person.firstName + " " + person.lastName;
+      };
+})
+
+.controller('AddCommentCtrl', function($scope, $stateParams, $location, CommentService){
+    $scope.addComment = function(){
+        var content = $scope.commentInput;
+        var articleId = $stateParams.articleId;
+        CommentService.addComment(articleId, content, userId);
+        $location.path('article/'+$stateParams.articleId);
+    }
+
 })
 // delete article
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
@@ -78,12 +105,9 @@ angular.module('starter.controllers', ['ngRoute'])
   $scope.submit = function(email, password, lastName, firstName, profession, practiceLocation){
 
     //var people = JSON.parse(window.localStorage.getItem('people'));
-    var id = PersonService.get().length;
-    $stateParams.personId = id;
-
-    var userId = JSON.parse(localStorage.getItem('userId'));
+    id = PersonService.get().length;
+    userId = JSON.parse(localStorage.getItem('userId'));
     userId = id;
-    window.localStorage.setItem('userId', JSON.stringify(userId));
 
     PersonService.create(email, password, firstName, lastName, profession, practiceLocation);
     console.log(PersonService.getId(id).email);
@@ -103,10 +127,10 @@ angular.module('starter.controllers', ['ngRoute'])
 
     for (var i = 0; i < PersonService.get().length; i++) {
       if (email == PersonService.getId(i).email && password == PersonService.getId(i).password) {
-        userId = i;
-        window.localStorage.setItem('userId', JSON.stringify(userId));
-        $location.path('home/');
         error = false;
+        userId = people[i].id;
+        localStorage.setItem(userId, JSON.stringify('userId'));
+        $location.path('home/');
       }
     }
     if(error) {

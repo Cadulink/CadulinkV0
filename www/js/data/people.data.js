@@ -1,5 +1,7 @@
 angular.module('people.data', []);
 
+var currentUser;
+localStorage.setItem(currentUser,('currentUser'));
 var people = [
     {
         id: 0,
@@ -52,4 +54,3 @@ var people = [
         communities: [0,3,4]
     },
 ];
-

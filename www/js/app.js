@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'starter.controllers','starter.services','articles.service','communities.service','people.service'])
+var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'starter.controllers','starter.services','articles.service','communities.service','people.service', 'comment.service'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -65,6 +65,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
 
     // article
     .state('article', {
+        cache: false,
         url: '/article/:articleId',
         templateUrl: 'templates/article.html',
         controller:'AfficherCtrl'
@@ -81,6 +82,10 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
         url: '/delete/:articleId',
         templateUrl: 'templates/delete.html',
         controller: 'DeleteCtrl'
+    })
+    .state('addComment',{
+        url: '/article/:articleId/comment',
+        templateUrl: 'templates/addComment.html'
     })
 
     // photo api
