@@ -3,7 +3,19 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'starter.controllers','starter.services','articles.service','communities.service','people.service', 'comment.service'])
+var exampleApp = angular.module('starter', ['ionic',
+                                            'ngRoute',
+                                            'ngCordova',
+                                            'starter.services',
+                                            'articles.service',
+                                            'communities.service',
+                                            'people.service',
+                                            'comment.service',
+                                            'starter.controllers',
+                                            'articles.controllers',
+                                            'comments.controllers',
+                                            'communities.controllers',
+                                            'people.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -106,7 +118,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
             url: '/newArticle',
             views: {
                 'menuContent': {
-                  templateUrl: 'templates/newArticle.html',
+                  templateUrl: 'templates/articleNew.html',
                 }
             },
             controller: 'NewCtrl'
@@ -116,7 +128,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
             url: '/delete/:articleId',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/delete.html'
+                    templateUrl: 'templates/articleDelete.html'
                 }
             },
             controller: 'DeleteCtrl'
@@ -125,7 +137,7 @@ var exampleApp = angular.module('starter', ['ionic','ngRoute', 'ngCordova', 'sta
             url: '/article/:articleId/comment',
             views: {
                 'menuContent': {
-                    templateUrl: 'templates/addComment.html',
+                    templateUrl: 'templates/commentNew.html',
                 }
             },
             controller: 'AddCommentCtrl'
