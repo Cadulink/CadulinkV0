@@ -61,16 +61,13 @@ angular.module('starter.controllers', ['ngRoute'])
 })
 // edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
-    console.log($stateParams.articleId);
-    $scope.article = ArticleService.get($stateParams.articleId);
-    console.log($scope.article.content);
+  $scope.article = ArticleService.get($stateParams.articleId);
     $scope.submit = function(title , content) {
         ArticleService.edit(articleId,0,userId,title,content);
     }
 })
 // delete
 .controller('DeleteCtrl', function($scope, $stateParams, ArticleService){
-    console.log($stateParams.articleId);
   var retour = ArticleService.delete($stateParams.articleId);
   if(retour == true) {
     $scope.text = "Article " + $stateParams.articleId + " supprimé";

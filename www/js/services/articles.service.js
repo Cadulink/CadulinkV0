@@ -15,7 +15,12 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             return subArticles;
         },
         get: function(articleId) {
-          return articles[articleId];
+          for(var i = 0; i < articles.length; i++)
+          {
+            if(articles[i].id == articleId) {
+                return articles[i];
+            }
+          }
         },
         getAuthor: function(personId) {
             return people[personId];
@@ -80,23 +85,22 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
           }
         },
         // FUNCTION edit article
-        edit: function(communityId,authorId,newTitle,newContent) {
+        edit: function(articleId,communityId,authorId,newTitle,newContent) {
           if ((newContent=="") && (newTitle == "")) {
             alert("Veuillez remplir les champs obligatoire");
           }
           else {
-            var articleDate=new Date(Date.now());
-            articleDate = articleDate.toLocaleDateString();
-            var newArticle= {
-              "id": newId,
+            for( i=0 ; i<=articles.length;i++){
+              if (articles[i].id == articleId){
+                  articleId = id;
+              }
+            }
+            articles[articleId] = {
               "communityId":communityId,
               "authorId": userId,
               "title": newTitle,
               "content": newContent,
-              "date": articleDate,
             }
-            articles.splice(i, 1);
-            articles.push(newArticle);
             console.log(articles);
           }
         },
