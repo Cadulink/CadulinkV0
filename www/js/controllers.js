@@ -34,7 +34,7 @@ angular.module('starter.controllers', ['ngRoute'])
 .controller('CommentCtrl', function($scope, $stateParams, $location, CommentService){
       $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
       $scope.switch = function(){
-        $location.path("article/"+ $stateParams.articleId + "/comment")
+        $location.path("app/article/"+ $stateParams.articleId + "/comment")
       }
       $scope.getAuthor = function(comment) {
           var person =  CommentService.getAuthor(comment.authorId);
@@ -47,6 +47,7 @@ angular.module('starter.controllers', ['ngRoute'])
         var content = $scope.commentInput;
         var articleId = $stateParams.articleId;
         CommentService.addComment(articleId, content, userId);
+        console.log("aId" + articleId);
         $location.path("app/article/" + articleId);
     }
 

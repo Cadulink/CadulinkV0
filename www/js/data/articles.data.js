@@ -8,7 +8,7 @@ var articles = [
     title:"Un test salivaire pour détecter le cancer : info ou intox ?",
     content: "<p>Si la decouverte se confirme, elle pourrait revolutionner le depistage du cancer. Des scientifiques sont en train de developper un test salivaire utilisable a domicile permettant de detecter la presence d'un cancer en une dizaine de minutes, rapporte le Telegraph. Ce test salivaire serait precis a 100% et si simple a utiliser qu'il pourrait etre mis en vente libre en pharmacie.Une simple goutte de salive en guise de test</br>Selon David Wong, un professeur d'oncologie a l'universite de Californie, il est possible de detecter des tumeurs lorsqu'elles circulent dans les fluides corporels. Les tests menes par ce scientifique ont demontre qu'une simple goutte de salive contient assez de donnees pour permettre d'etablir un diagnostic des le debut du developpement de la tumeur, assure-t-il. Actuellement, les scientifiques ne peuvent utiliser que les tests sanguins pour detecter un cancer, s'ils ont deja effectue une biopsie pour reperer une tumeur.</br>'Detecter le cancer le plus tot possible est crucial. Avec ce test, cela peut-etre fait par le patient lui-meme, chez lui, chez le dentiste, ou en pharmacie', souligne encore David Wong, qui espere voir le test arriver en Grande-Bretagne dans la decennie, voire plus tot.</p> ",
     picture:'',
-    date: "19/5/2016"
+    date: "19/3/2016"
   },
   {
     id:2,
@@ -29,7 +29,7 @@ var articles = [
     "Conclusion des chercheurs, comme la perte de repères géographiques est l'un des premiers symptômes d'Alzheimer, le Pr Pintzka espère que cette étude aidera d'autres scientifiques à mieux comprendre le développement de la maladie."+
     "Et comme deux fois plus de femmes souffrent de cette maladie, elle pourrait peut-être être liée aux hormones sexuelles, pense-t-il. Une hypothèse qui reste à confirmer…..</p>",
     picture:'',
-    date:'04/3/2016'
+    date:'4/3/2016'
   },
   {
     id:3,
@@ -45,7 +45,7 @@ var articles = [
     "<p>En janvier 2015, un sondage IFOP/PHR destiné à mieux appréhender le regard des Français sur l’e-pharmacie et les objets connectés montrait que 65 % des clients souhaitent disposer d’une offre d’objets connectés dans leur pharmacie.</p>"+
     "<p>Pour 73 % des personnes interrogées, les objets connectés permettent de garantir un meilleur échange avec les professionnels de santé et plus de 77 % sont prêts à partager leurs informations personnelles, qu’il s’agisse de traitements, de données corporelles ou relatives au sommeil et à l’activité physique, avec leur pharmacien.</p>",
     picture:'',
-    date:"04/3/2016"
+    date:"4/3/2016"
   },
   {
     id:4,
@@ -112,7 +112,7 @@ var articles = [
     "<p>Dans un pays comme la France, où les mutuelles et la CMU permettent d'accéder plus facilement à des soins de santé, les jeunes cèdent plutôt à un effet de mode en imitant d'autres adolescents de leur âge. Une tendance que les parents et les professionnels de santé doivent donc apprendre à repérer et à prévenir , avant qu'elle ne se diffuse plus largement dans l'Hexagone.</p>"+
     "<p>Même ci certains tutoriels promettent, preuves à l'appui, des résultats impressionnants à bas coût, les conséquences pour la santé peuvent être désastreuses.</p>",
     picture:'',
-    date:"25/1/2016"
+    date:"22/1/2016"
   },
   {
     id:8,
@@ -135,7 +135,7 @@ var articles = [
     "<p>Par ailleurs, en novembre, l'ANSM et le CPP (Comité de Protection des Personnes) ont autorisé l'élargissement des critères de recrutement des patients, grâce aux données intermédiaires issues des premières implantations. Jusqu’à présent, le protocole permettait d’inclure dans l’étude uniquement les personnes non éligibles à la transplantation, en phase terminale d’insuffisance cardiaque biventriculaire irréversible.</p>"+
     "<p>En toute logique, la phase post-opératoire aurait donc dû être moins problématique pour ce quatrième patient. Et on aurait pu penser qu'il survivrait plus longtemps. Sur ce point non plus, Carmat ne donnera pas d'éclaircissement. La société communiquera dans quelques semaines. Ce fût la réponse lapidaire que nous avons pu obtenir de son service presse.</p>",
     picture:'',
-    date:"25/1/2016"
+    date:"15/1/2016"
   },
   {
     id:9,
@@ -151,7 +151,7 @@ var articles = [
     "<p>Fort(e) d'une expérience réussie au sein d'un établissement de Santé, vous souhaitez mettre à profit vos compétences dans une structure récente en plein développement. </p>"+
     "<p>Vous êtes professionnel(le), autonome et rigoureux(se), envoyez-nous votre candidature à : metiers-sante@wolf-interim.com</p>",
     picture:'',
-    date:"21/1/2016"
+    date:"11/1/2016"
   },
   {
     id:10,
@@ -160,7 +160,7 @@ var articles = [
     title:"Remplacement infirmier(e) liberal(e)",
     content:"<p>Cabinet infirmier proche de Caen recherche remplaçant(e) pour 4 à 5 jours mensuels (un WE inclus). volume de remplacement plus important en juillet/aout. Poste à pourvoir de suite. Premier contact par mail.</p>",
     picture:'',
-    date:"21/1/2016"
+    date:"11/1/2016"
   },
   {
     id:11,
@@ -175,7 +175,7 @@ var articles = [
     "<p>Toutefois, de nombreuses questions en suspens tendent à créer un scepticisme autour de cette attente.</p>"+
     "<p>Si le métier d'infirmier clinicien existe déjà dans les pays anglo-saxons, il peine à émerger en France du fait de plusieurs problématiques. Parmi elles, l'aspect financier. En effet, chaque année, un infirmier diplômé d’État coûte en moyenne 50 000 euros, charges patronales incluses. Mais quid d'un infirmier de pratique avancée en oncologie (IPAO) ? La délicate question de la rémunération de ces nouveaux professionnels retarde l'entrée en formation des potentiels candidats.</p>",
     picture: '',
-    date:'21/1/2016'
+    date:'10/1/2016'
   },
   {
     id:12,
@@ -194,6 +194,6 @@ var articles = [
     "<p>Le docteur Dary se montre d’autant plus optimiste que le directeur de l’Agence régionale de santé du Limousin, Philippe Calmette, présent hier, s’est montré enthousiaste. « Un des objectifs de l’ARS, c’est de garantir l’accès aux soins pour tous. L’éloignement peut entraîner du renoncement. La télé médecine réduit les distances et donc les inégalités d’accès aux soins ».</p>"+
     "<p>Si l’essai venait à se transformer, Lubersac devrait attendre environ un an avant de disposer de cette nouvelle technologie.</p>",
     picture:"img/article/consult.jpg",
-    date:'21/1/2016'
+    date:'9/1/2016'
   }
 ];
