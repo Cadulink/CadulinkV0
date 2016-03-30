@@ -55,6 +55,7 @@ angular.module('starter.controllers', ['ngRoute'])
 // newArticle article
 .controller('NewCtrl', function($scope, $stateParams, ArticleService){
     $scope.submit = function(title , content) {
+        console.log("t" + title);
         ArticleService.new(0,userId,title,content);
     }
 })

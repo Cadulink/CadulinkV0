@@ -64,7 +64,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
               "content": newContent,
               "date": articleDate,
             }
-            articles.push(newArticle);
+            articles.splice(0,0,newArticle);
             console.log(articles);
           }
         },
