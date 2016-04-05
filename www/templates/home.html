@@ -16,7 +16,7 @@
                         <div ui-sref="app.article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>
                         <div class='nbrcomment'>{{nbrComment(article)}} commentaires</div>
                     </div>
-                    <div class="floating_right">
+                    <div ng-if="userId == article.authorId" class="floating_right">
                       <a ui-sref="app.delete({articleId: article.id})" class="positive">Delete</a>
                       &nbsp;
                       <a ui-sref="app.edit({articleId: article.id})" class="positive">Edit</a>

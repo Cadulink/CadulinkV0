@@ -127,3 +127,10 @@ i.ion-home {
   border: solid 2px white;
   margin-right: 15px;
 }
+
+.buttonEditComment{
+  float: right;
+  background-color: white;
+  border: none;
+  margin-bottom: 15px;
+}

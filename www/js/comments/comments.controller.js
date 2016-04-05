@@ -2,6 +2,7 @@ angular.module('comments.controllers', ['ngRoute'])
 
 .controller('CommentCtrl', function($scope, $stateParams, $location, CommentService){
       $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
+      $scope.userId =  userId;
       $scope.switch = function(){
         $location.path("app/article/"+ $stateParams.articleId + "/comment")
       }

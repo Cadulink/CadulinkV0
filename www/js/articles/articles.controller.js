@@ -2,6 +2,7 @@ angular.module('articles.controllers', ['ngRoute'])
 
 //Articles pages
 .controller('ArticlesCtrl', function($scope, $stateParams, ArticleService) {
+    $scope.userId =  userId;
     $scope.articles = ArticleService.getByCommunity($stateParams.communityId);
     if(typeof $stateParams.communityId === "undefined" || $stateParams.communityId == "") {
         $scope.articles = ArticleService.getAll();

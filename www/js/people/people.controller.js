@@ -25,7 +25,7 @@ angular.module('people.controllers', ['ngRoute'])
   $scope.firstName = PersonService.getId(userId).firstName;
   $scope.profession = PersonService.getId(userId).profession;
   $scope.practiceLocation = PersonService.getId(userId).practiceLocation;
-
+  
   $scope.title = 'Editer son profil';
 
   $scope.OpenModal = function(){
