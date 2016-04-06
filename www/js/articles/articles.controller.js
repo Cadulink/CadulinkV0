@@ -23,7 +23,7 @@ angular.module('articles.controllers', ['ngRoute'])
 
 //One article page
 .controller('AfficherCtrl', function($scope, $stateParams, ArticleService){
-      $scope.articles = ArticleService.getByArticle($stateParams.articleId);
+      $scope.articles = ArticleService.getId($stateParams.articleId);
       $scope.getAuthor = function(article) {
           var person =  ArticleService.getAuthor(article.authorId);
           return person.firstName + " " + person.lastName;
@@ -37,8 +37,9 @@ angular.module('articles.controllers', ['ngRoute'])
 })
 // edit article
 .controller('EditArticleCtrl', function($scope, $stateParams, ArticleService){
-  $scope.article = ArticleService.get($stateParams.articleId);
+  $scope.article = ArticleService.getId($stateParams.articleId);
     $scope.submit = function(title , content) {
+      var articleId = $stateParams.articleId;
         ArticleService.edit(articleId,0,userId,title,content);
     }
 })

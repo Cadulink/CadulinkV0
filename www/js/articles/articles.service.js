@@ -14,7 +14,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             });
             return subArticles;
         },
-        get: function(articleId) {
+        getId: function(articleId) {
           for(var i = 0; i < articles.length; i++)
           {
             if(articles[i].id == articleId) {
@@ -24,14 +24,6 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         },
         getAuthor: function(personId) {
             return people[personId];
-        },
-        getByArticle: function(articleId){
-          for(var i = 0; i < articles.length; i++)
-          {
-            if(articles[i].id == articleId) {
-              return articles[i];
-            }
-          }
         },
         nbrComment: function(articleId){
            var nbrComment = 0;
@@ -91,15 +83,15 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
           }
           else {
             for( i=0 ; i<=articles.length;i++){
-              if (articles[i].id == articleId){
-                  articleId = id;
+              if (articles[i.id] == articleId){
+                  articleId = i;
+                  articles[articleId] = {
+                    "communityId":communityId,
+                    "authorId": userId,
+                    "title": newTitle,
+                    "content": newContent,
+                  }
               }
-            }
-            articles[articleId] = {
-              "communityId":communityId,
-              "authorId": userId,
-              "title": newTitle,
-              "content": newContent,
             }
             console.log(articles);
           }
