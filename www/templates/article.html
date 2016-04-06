@@ -23,20 +23,29 @@
 
             <div class="item item-text-wrap" ng-repeat="comment in comments" name="comment">
               <img class='float-left-img' src="../img/SVelluz.jpg">
-              <div class='float-right'>
-                <a ui-sref="profil({personId: articles.authorId})">par {{getAuthor(comment)}}</a>
-                  <hr>
-                <class='float-left'div ng-bind-html="comment.content"></div>
 
-                <div ng-if="userId == comment.authorId" class="floating_right">
-                  <a ui-sref="" class="positive">Delete</a>
-                  &nbsp;
-                  <a ui-sref="" class="positive">Edit</a>
-                  &nbsp;
+
+              <div class='float-right'>
+                <div ng-if="userId == comment.authorId" class='floating_right'>
+                    <button>Delete</button>
+                    <button  ng-click="switchEdit(comment.id)">Edit</button>
+                </div>
+                <a ui-sref="profil({personId: articles.authorId})">par {{getAuthor(comment)}}</a>
+
+
+                  <hr>
+
+                <div ng-if="!edit" class='float-left'ng-bind-html="comment.content"></div>
+
+                <div ng-if="edit">
+                  <input id='inputComment' type="text" ng-model="comment.content"/>
+                  <button type='button' ng-click="editComment(comment.id)">valider</button>
                 </div>
               </div>
+
+
             </div>
-            <button ng-click="switch()" class='buttonArticle'>Ajouter un commentaire</button>
+            <button ng-click="switch()" class="buttonArticle">Ajouter un commentaire</button>
           </div>
         </div>
       </div>

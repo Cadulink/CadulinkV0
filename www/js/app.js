@@ -102,6 +102,15 @@ var exampleApp = angular.module('starter', ['ionic',
             },
             controller:'AfficherCtrl'
         })
+        .state('app.comment',{
+          url: '/comment/:commentId',
+          cache:false,
+          view: {
+            'menuContent': {
+              templateUrl: 'templates/commentEdit.html',
+            }
+          },
+        })
         // profil
         .state('app.profil', {
             cache: false,

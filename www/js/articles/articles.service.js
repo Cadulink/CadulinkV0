@@ -91,7 +91,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
           }
           else {
             for( i=0 ; i<=articles.length;i++){
-              if (articles[i].id == articleId){
+              if (articles[i.id] == articleId){
                   articleId = id;
               }
             }

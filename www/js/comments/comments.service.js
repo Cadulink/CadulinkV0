@@ -2,8 +2,8 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
 
 .factory('CommentService', function() {
     return {
-      getAll: function(){
-        return comments;
+      get: function(id){
+        return comments[id];
       },
       getCommentByArticle: function(articleId){
         var commentsArticle = [];
@@ -17,6 +17,31 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
       },
       getAuthor: function(personId) {
           return people[personId];
+      },
+
+      delete: function(commentId) {
+        for( i=0 ; i<=comments.length;i++){
+          if (comments[i].id == commentId){
+            comments.splice(i, 1);
+            console.log("after deletion:" + articles);
+            return true;
+          }
+        }
+      },
+      edit: function(id, authorId, articleId, content){
+      if(content == ""){
+        alert("ERREUR")
+      }
+      else
+      {
+        comments[id] = {
+          "id": id,
+          "authorId": authorId,
+          "articleId": articleId,
+          "content": content
+        }
+        console.log(comments[id])
+      }
       },
       addComment: function(articleId, content, userId){
       var newComment =
