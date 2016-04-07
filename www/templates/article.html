@@ -35,9 +35,9 @@
 
                   <hr>
 
-                <div ng-if="!edit" class='float-left'ng-bind-html="comment.content"></div>
+                <div ng-if="idEdit != comment.id" class='float-left'ng-bind-html="comment.content"></div>
 
-                <div ng-if="edit">
+                <div ng-if="idEdit == comment.id">
                   <input id='inputComment' type="text" ng-model="comment.content"/>
                   <button type='button' ng-click="editComment(comment.id)">valider</button>
                 </div>
