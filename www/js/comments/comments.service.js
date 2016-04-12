@@ -28,18 +28,14 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
           }
         }
       },
-      edit: function(id, authorId, articleId, content){
+      edit: function(id,content){
       if(content == ""){
         alert("ERREUR")
       }
       else
       {
-        comments[id] = {
-          "id": id,
-          "authorId": authorId,
-          "articleId": articleId,
-          "content": content
-        }
+        console.log(comments[id])
+        comments[id] = content;
         console.log(comments[id])
       }
       },
