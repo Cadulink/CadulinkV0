@@ -152,14 +152,14 @@ var exampleApp = angular.module('starter', ['ionic',
             controller: 'AddCommentCtrl'
         })
         // delete
-        .state('app.edit', {
-            url: '/edit/:articleId',
-            views: {
-                'menuContent': {
-                    templateUrl: 'templates/articleEdit.html',
-                }
-            },
-            controller: 'EditArticleCtrl'
+        .state('app.deleteComment',{
+          url: '/article/:commentDeleteId',
+          views:{
+            'menuContent':{
+                templateUrl: 'templates/commentDelete.html'
+            }
+          },
+            controller:'DeleteCommentCtrl'
         })
         // photo api
         .state('app.photo', {

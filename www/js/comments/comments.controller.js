@@ -1,16 +1,17 @@
 angular.module('comments.controllers', ['ngRoute'])
 
-.controller('CommentCtrl', function($scope, $stateParams, $location, CommentService){
-      $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
-      $scope.userId =  userId;
-      $scope.switch = function(){
+.controller('CommentCtrl', function($scope, $stateParams, $location, CommentService, $route){
+        $scope.comments = CommentService.getCommentByArticle($stateParams.articleId);
+        $scope.userId =  userId;
+        $scope.switch = function(){
         $location.path("app/article/"+ $stateParams.articleId + "/comment")
       }
       $scope.switchEdit = function(id){
         $scope.idEdit = id;
+        console.log(comments.length);
       }
+
       $scope.editComment = function(id){
-        console.log(id)
         $scope.comment = {
             id : comments[id].id,
             authorId: comments[id].authorId,
@@ -27,6 +28,18 @@ angular.module('comments.controllers', ['ngRoute'])
       };
 
 })
+.controller('DeleteCommentCtrl', function($scope, $stateParams,$location, CommentService){
+  var texte = comments[$stateParams.commentDeleteId].content
+  var comment = '';
+  for (var i = 3; i < (comments[$stateParams.commentDeleteId].content).length -4 ; i++) {
+    comment = comment + texte[i];
+  }
+  $scope.texte = 'Supprimer le commentaire "'+ comment + "?" + '"';
+  $scope.deleteComment = function(){
+  CommentService.delete($stateParams.commentDeleteId);
+  $scope.texte = 'Commentaire supprimer';
+  }
+})
 
 .controller('AddCommentCtrl', function($scope, $stateParams, $location, CommentService){
     $scope.addComment = function(){
@@ -36,5 +49,4 @@ angular.module('comments.controllers', ['ngRoute'])
         console.log("Id" + articleId);
         $location.path("app/article/" + articleId);
     }
-
 })

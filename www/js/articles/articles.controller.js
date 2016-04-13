@@ -25,6 +25,7 @@ angular.module('articles.controllers', ['ngRoute'])
 //One article page
 .controller('AfficherCtrl', function($scope, $stateParams, ArticleService){
       $scope.articles = ArticleService.getByArticle($stateParams.articleId);
+      console.log($stateParams);
       $scope.getAuthor = function(article) {
           var person =  ArticleService.getAuthor(article.authorId);
           return person.firstName + " " + person.lastName;

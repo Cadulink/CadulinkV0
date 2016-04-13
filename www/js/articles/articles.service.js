@@ -33,15 +33,16 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
             }
           }
         },
-        nbrComment: function(articleId){
+        nbrComment: function(id){
            var nbrComment = 0;
-           comments.forEach(function(element, key, array){
-             if(element.articleId == articleId){
-                 nbrComment++;
+           id = id -1;
+           for(var i = 0; i < comments.length; i++){
+             if(id == comments[i].articleId){
+               nbrComment++;
              }
-           })
+           }
            return nbrComment;
-        },
+         },
         getPreview: function(articleId){
           for(var i = 0; i < articles.length; i++)
           {

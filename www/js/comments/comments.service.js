@@ -23,33 +23,31 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
         for( i=0 ; i<=comments.length;i++){
           if (comments[i].id == commentId){
             comments.splice(i, 1);
-            console.log("after deletion:" + articles);
+            console.log("after salut:" + comments);
             return true;
           }
         }
       },
       edit: function(id,content){
-      if(content == ""){
-        alert("ERREUR")
-      }
-      else
-      {
-        console.log(comments[id])
-        comments[id] = content;
-        console.log(comments[id])
-      }
+          if(content == ""){
+            alert("ERREUR")
+          }
+          else
+          {
+            comments[id] = content;
+          }
       },
       addComment: function(articleId, content, userId){
-      var newComment =
-      {
-        'id' : comments.length,
-        'authorId' : userId,
-        'articleId': articleId,
-        'content' : "<p>"+content+"</p>"
-      }
-      console.log("Salut" +userId);
-      comments.push(newComment);
-      console.log(comments);
+        var newComment =
+        {
+          'id' : comments.length + 1,
+          'authorId' : userId,
+          'articleId': articleId,
+          'content' : "<p>"+content+"</p>"
+        }
+        console.log("Salut" +userId);
+        comments.push(newComment);
+        console.log(comments);
 		}
   };
   });
