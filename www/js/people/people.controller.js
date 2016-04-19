@@ -5,6 +5,7 @@ angular.module('people.controllers', ['ngRoute'])
         $stateParams.personId = userId;
     }
     $scope.userId = userId;
+    $scope.image = PersonService.getImage($stateParams.personId)
     $scope.PersonService = PersonService;
     $scope.person = PersonService.getId($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);
@@ -12,7 +13,8 @@ angular.module('people.controllers', ['ngRoute'])
     $scope.quitCommunity = PersonService.quitCommunity;
 })
 
-.controller('EditProfilCtrl', function($scope, $ionicModal, PersonService){
+.controller('EditProfilCtrl', function($scope, $ionicModal, $stateParams
+  , PersonService){
   $ionicModal.fromTemplateUrl('templates/register.html', {
     scope: $scope
   }).then(function(modal) {
@@ -25,7 +27,7 @@ angular.module('people.controllers', ['ngRoute'])
   $scope.firstName = PersonService.getId(userId).firstName;
   $scope.profession = PersonService.getId(userId).profession;
   $scope.practiceLocation = PersonService.getId(userId).practiceLocation;
-  
+
   $scope.title = 'Editer son profil';
 
   $scope.OpenModal = function(){
@@ -35,7 +37,6 @@ angular.module('people.controllers', ['ngRoute'])
   $scope.CloseModal = function(){
     $scope.modal.hide();
   };
-
   $scope.submit = function(email, password, firstName, lastName, profession, practiceLocation) {
     PersonService.edit(userId, email, password, firstName, lastName, profession, practiceLocation);
     $scope.modal.hide();

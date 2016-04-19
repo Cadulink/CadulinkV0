@@ -11,10 +11,13 @@ angular.module('articles.controllers', ['ngRoute'])
       var preview = ArticleService.getPreview(article.id);
       return preview;
     }
-
     $scope.getAuthor = function(article) {
         var person =  ArticleService.getAuthor(article.authorId);
         return person.firstName + " " + person.lastName;
+    }
+    $scope.getImage = function(article){
+      var image = ArticleService.getImage(article.authorId);
+      return image;
     }
     $scope.nbrComment = function(article){
       var nbrComments = ArticleService.nbrComment(article.authorId);

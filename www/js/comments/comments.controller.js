@@ -10,7 +10,6 @@ angular.module('comments.controllers', ['ngRoute'])
         $scope.idEdit = id;
         console.log(comments.length);
       }
-
       $scope.editComment = function(id){
         $scope.comment = {
             id : comments[id].id,
@@ -21,6 +20,10 @@ angular.module('comments.controllers', ['ngRoute'])
         console.log($scope.comment);
         CommentService.edit(id,$scope.comment);
         $scope.idEdit = "";
+      }
+      $scope.getImage = function(comment){
+        var image = CommentService.getImage(comment.authorId);
+        return image;
       }
       $scope.getAuthor = function(comment) {
           var person =  CommentService.getAuthor(comment.authorId);

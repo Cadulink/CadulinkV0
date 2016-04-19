@@ -8,7 +8,7 @@
                     <h1 class='titre'>{{article.title}}</h1>
                 </div>
                     <div class="item item-avatar">
-                        <img src="img/sebatien.jpg">
+                        <img src={{getImage(article)}}>
                         <a ui-sref="app.profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
                         <p>le {{article.date}}</p>
                     </div>

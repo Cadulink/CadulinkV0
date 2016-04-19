@@ -25,6 +25,9 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         getAuthor: function(personId) {
             return people[personId];
         },
+        getImage: function(personId){
+          return people[personId].image;
+        },
         getByArticle: function(articleId){
           for(var i = 0; i < articles.length; i++)
           {
@@ -35,7 +38,7 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         },
         nbrComment: function(id){
            var nbrComment = 0;
-           id = id -1;
+           id = id;
            for(var i = 0; i < comments.length; i++){
              if(id == comments[i].articleId){
                nbrComment++;

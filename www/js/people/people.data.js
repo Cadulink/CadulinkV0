@@ -11,7 +11,8 @@ var people = [
         lastName: "Velluz",
         profession: "Médecin généraliste",
         practiceLocation: "Valenciennes",
-        communities: [0,2,3]
+        communities: [0,2,3],
+        image: "img/sebatien.jpg",
     },
     {
         id: 1,
@@ -21,7 +22,8 @@ var people = [
         lastName: "Tansaout",
         profession: "Chirurgien-dentiste",
         practiceLocation: "Anzin",
-        communities: [1,2]
+        communities: [1,2],
+        image:"img/kamel.jpg"
     },
     {
         id: 2,
@@ -31,7 +33,8 @@ var people = [
         lastName: "Fourrier",
         profession: "Étudiant sage-femme",
         practiceLocation: "Lille",
-        communities: [0,4]
+        communities: [0,4],
+        image: "img/julien.jpg"
     },
     {
         id: 3,
@@ -41,7 +44,8 @@ var people = [
         lastName: "De Mendonca",
         profession: "ORL",
         practiceLocation: "Tourcoing",
-        communities: [1,2,4]
+        communities: [1,2,4],
+        image: "img/anthony.jpg"
     },
     {
         id: 4,
@@ -51,6 +55,7 @@ var people = [
         lastName: "Pary",
         profession: "Médecin généraliste",
         practiceLocation: "Valenciennes",
-        communities: [0,3,4]
+        communities: [0,3,4],
+        image :"img/philippe.jpg"
     },
 ];

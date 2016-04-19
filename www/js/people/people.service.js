@@ -17,6 +17,9 @@ angular.module('people.service', ['articles.data', 'communities.data', 'people.d
             );
             return subCommunities;
         },
+        getImage: function(personId){
+          return people[personId].image;
+        },
         create: function(email, password, firstName, lastName, profession, practiceLocation){
             people.push({
               'id': people.length,

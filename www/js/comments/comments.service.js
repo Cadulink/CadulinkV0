@@ -18,7 +18,9 @@ angular.module('comment.service', ['articles.data', 'communities.data', 'people.
       getAuthor: function(personId) {
           return people[personId];
       },
-
+      getImage: function(personId){
+        return people[personId].image;
+      },
       delete: function(commentId) {
         for( i=0 ; i<=comments.length;i++){
           if (comments[i].id == commentId){
