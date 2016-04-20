@@ -4,11 +4,17 @@
   <div class="card">
    <div class="item item-avatar">
       <img src="img/caducee.jpg">
-      <h2>{{community.label}}</h2>
+      <h2>{{community.label}}</h2><p>{{nbrMembre}} Membres</p>
       <p><a ui-sref="app.home({communityId: community.id})">Accès aux articles</a></p>
    </div>
-   <div class="item-body">{{community.description}}</div>
-
+   <div class="card">
+     <div class="item item-divider">
+       Membres :
+     </div>
+     <div class="item item-text-wrap" ng-repeat="member in members">
+       <a>- {{member.firstName}} {{member.lastName}} </a>
+     </div>
+ </div>
    <div class="item item-body">
      <em><p>Communautés liées :</p></em>
      <ul>
@@ -16,9 +22,9 @@
      </ul>
     </div>
     <div class="item item-avatar">
-      <img src="img/SVelluz.jpg">
+      <img src="{{animator.image}}">
        <p>Animateur : </p>
-       <h2>Sebastien VELLUZ</h2>
+       <h2>{{animator.firstName + ' ' + animator.lastName}}</h2>
     </div>
     <div ng-controller="PersonCtrl">
         <div ng-if="community.communityManagerId != person.id">
@@ -29,7 +35,7 @@
                 <button ng-click="quitCommunity(person.id, community.id)" class="button button-positive button-block">Quitter</button>
             </div>
         </div>
-        <div ng-if="community.communityManagerId == person.id">
+        <div ng-if="community.communityManagerId == person.id">—
             <button ui-sref="app.communityEdit({communityId: community.id})" class="button button-positive button-block">Éditer</button>
         </div>
     </div>

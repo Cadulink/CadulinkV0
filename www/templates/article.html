@@ -8,8 +8,8 @@
                     <h1>{{articles.title}}</h1>
                 </div>
                 <div class="item item-avatar">
-                    <img src="img/sebatien.jpg">
-                    <a ui-sref="app.profil({personId: articles.authorId})">par {{getAuthor(articles)}}</a>
+                    <img src="{{getImageArticle(articles)}}">
+                    <a ui-sref="app.profil({personId: articles.authorId})">par {{getAuthor(articles)}}</a> <span>dans</span> <a> {{getCommunity(articles)}}</a>
                     <p>le {{articles.date}}</p>
                 </div>
                 <div class="item item-body">
@@ -22,7 +22,7 @@
                 <hr>
 
             <div class="item item-text-wrap" ng-repeat="comment in comments" name="comment">
-              <img class='float-left-img' src="{{getImage(comment)}}">
+              <img class='float-left-img' src="{{getImageComment(comment)}}">
 
 
               <div class='float-right'>

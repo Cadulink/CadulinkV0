@@ -15,13 +15,17 @@ angular.module('articles.controllers', ['ngRoute'])
         var person =  ArticleService.getAuthor(article.authorId);
         return person.firstName + " " + person.lastName;
     }
-    $scope.getImage = function(article){
-      var image = ArticleService.getImage(article.authorId);
-      return image;
+    $scope.getImageArticle = function(article){
+      var imageArticle = ArticleService.getImage(article.authorId);
+      return imageArticle;
     }
     $scope.nbrComment = function(article){
       var nbrComments = ArticleService.nbrComment(article.authorId);
       return nbrComments;
+    }
+    $scope.getCommunity = function(article){
+      var community = ArticleService.getCommunity(article);
+      return community;
     }
 })
 
@@ -33,6 +37,14 @@ angular.module('articles.controllers', ['ngRoute'])
           var person =  ArticleService.getAuthor(article.authorId);
           return person.firstName + " " + person.lastName;
       };
+      $scope.getImageArticle = function(article){
+        var image = ArticleService.getImage(article.authorId);
+        return image;
+      }
+      $scope.getCommunity = function(article){
+        var community = ArticleService.getCommunity(article);
+        return community;
+       }
 })
 .controller('NewCtrl', function($scope, $stateParams, ArticleService){
     $scope.submit = function(title , content) {

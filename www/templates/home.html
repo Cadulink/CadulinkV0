@@ -8,9 +8,10 @@
                     <h1 class='titre'>{{article.title}}</h1>
                 </div>
                     <div class="item item-avatar">
-                        <img src={{getImage(article)}}>
-                        <a ui-sref="app.profil({personId: article.authorId})">par {{getAuthor(article)}}</a>
+                        <img src={{getImageArticle(article)}}>
+                        <a ui-sref="app.profil({personId: article.authorId})">par {{getAuthor(article)}} </a> <span>dans</span> <a ui-sref="app.community({communityId: article.communityId})"> {{getCommunity(article)}}</a>
                         <p>le {{article.date}}</p>
+                        <a class='community' ui-sref="app.profil({personId: articles.authorId})"></a>
                     </div>
                     <div class="item item-body">
                         <div ui-sref="app.article({articleId: article.id})" ng-bind-html="getPreview(article)"></div>

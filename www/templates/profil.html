@@ -3,7 +3,7 @@
         <div ng-app="starter.controllers" ng-controller="PersonCtrl">
             <div class="card">
                 <div class="item item-text-wrap item-avatar item-button-right">
-                    <img src="{{image}}">
+                    <img src="{{getImageProfil()}}">
                     {{person.firstName + ' ' + person.lastName}}
                     <button ng-if="person.id == userId" class="button button-positive" ng-controller="EditProfilCtrl" ng-click="OpenModal()"><i class="ion-edit"></i></button>
                 </div>

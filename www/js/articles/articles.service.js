@@ -25,6 +25,9 @@ angular.module('articles.service', ['articles.data', 'communities.data', 'people
         getAuthor: function(personId) {
             return people[personId];
         },
+        getCommunity: function(article){
+          return communities[article.communityId].label;
+        },
         getImage: function(personId){
           return people[personId].image;
         },

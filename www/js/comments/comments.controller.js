@@ -21,9 +21,9 @@ angular.module('comments.controllers', ['ngRoute'])
         CommentService.edit(id,$scope.comment);
         $scope.idEdit = "";
       }
-      $scope.getImage = function(comment){
-        var image = CommentService.getImage(comment.authorId);
-        return image;
+      $scope.getImageComment = function(comment){
+        var imageComment = CommentService.getImage(comment.authorId);
+        return imageComment;
       }
       $scope.getAuthor = function(comment) {
           var person =  CommentService.getAuthor(comment.authorId);

@@ -4,13 +4,17 @@ angular.module('people.controllers', ['ngRoute'])
     if(typeof $stateParams.personId === "undefined" || $stateParams.personId == "") {
         $stateParams.personId = userId;
     }
+    console.log($stateParams);
     $scope.userId = userId;
-    $scope.image = PersonService.getImage($stateParams.personId)
     $scope.PersonService = PersonService;
     $scope.person = PersonService.getId($stateParams.personId);
     $scope.communities = PersonService.getCommunities($stateParams.personId);
     $scope.joinCommunity = PersonService.joinCommunity;
     $scope.quitCommunity = PersonService.quitCommunity;
+    $scope.getImageProfil = function(){
+      var imageProfil = PersonService.getImage($stateParams.personId);
+      return imageProfil;
+    }
 })
 
 .controller('EditProfilCtrl', function($scope, $ionicModal, $stateParams
@@ -20,7 +24,6 @@ angular.module('people.controllers', ['ngRoute'])
   }).then(function(modal) {
     $scope.modal = modal;
   });
-
   $scope.email = PersonService.getId(userId).email;
   $scope.password = PersonService.getId(userId).password;
   $scope.lastName = PersonService.getId(userId).lastName;
