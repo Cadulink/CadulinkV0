@@ -1,4 +1,4 @@
-<ion-view view-title="Community Page">
+<ion-view view-title="Communauté">
 <ion-content padding="true">
   <div ng-app="starter.controllers" ng-controller="CommunityCtrl">
   <div class="card">
@@ -13,6 +13,9 @@
      </div>
      <div class="item item-text-wrap" ng-repeat="member in members">
        <a>- {{member.firstName}} {{member.lastName}} </a>
+       <div ng-if='userId == admin.id' class='floating_right'>
+           <button ng-click="remove(member.id)">Retirer de la communauté</button>
+       </div>
      </div>
  </div>
    <div class="item item-body">
@@ -26,6 +29,16 @@
        <p>Animateur : </p>
        <h2>{{animator.firstName + ' ' + animator.lastName}}</h2>
     </div>
+    <div class="item item-avatar">
+      <img src="{{labelisateur.image}}">
+       <p>Labelisateur : </p>
+       <h2>{{labelisateur.firstName + ' ' + labelisateur.lastName}}</h2>
+    </div>
+    <div class="item item-avatar">
+      <img src="{{admin.image}}">
+       <p>Admin : </p>
+       <h2>{{admin.firstName + ' ' + admin.lastName}}</h2>
+    </div>
     <div ng-controller="PersonCtrl">
         <div ng-if="community.communityManagerId != person.id">
             <div ng-if="person.communities.indexOf(community.id) == -1">
@@ -38,9 +51,6 @@
         <div ng-if="community.communityManagerId == person.id">—
             <button ui-sref="app.communityEdit({communityId: community.id})" class="button button-positive button-block">Éditer</button>
         </div>
-    </div>
-    <div ng-controller="ArticlesCtrl">
-
     </div>
   </div>
 </div>

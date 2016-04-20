@@ -58,4 +58,48 @@ var people = [
         communities: [0,3,4],
         image :"img/philippe.jpg"
     },
+    {
+        id: 5,
+        email: "jordan@cadulink.com",
+        password : "cadulink",
+        firstName: "Jordan",
+        lastName: "Bultez",
+        profession: "Chirurgien-plastique",
+        practiceLocation: "Valenciennes",
+        communities: [1,4],
+        image: "img/jordan.jpg"
+    },
+    {
+        id: 6,
+        email: "victor@cadulink.com",
+        password : "cadulink",
+        firstName: "Victor",
+        lastName: "Vergne",
+        profession: "Chiropratique",
+        practiceLocation: "Anzin",
+        communities: [1,2,4],
+        image: "img/victor.jpg"
+    },
+    {
+        id: 7,
+        email: "michel@cadulink.com",
+        password : "cadulink",
+        firstName: "Michel",
+        lastName: "Delpierre",
+        profession: "Gynécologue",
+        practiceLocation: "Bapaume",
+        communities: [0,4],
+        image: "img/michel.jpg"
+    },
+    {
+        id: 8,
+        email: "daniel@cadulink.com",
+        password : "cadulink",
+        firstName: "Daniel",
+        lastName: "Bruchet",
+        profession: "Dentiste",
+        practiceLocation: "Bapaume",
+        communities: [3,4],
+        image: "img/Daniel.jpg"
+    }
 ];

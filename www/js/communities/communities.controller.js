@@ -1,12 +1,13 @@
 angular.module('communities.controllers', ['ngRoute'])
 
-.controller('CommunityCtrl', function($scope, $stateParams, $ionicHistory, CommunityService) {
+.controller('CommunityCtrl', function($scope, $stateParams, $ionicHistory, CommunityService){
+  $scope.userId = userId;
   var community = CommunityService.get($stateParams.communityId);
-  $scope.members = CommunityService.getMember($stateParams.communityId);
+  $scope.members = CommunityService.getMember($stateParams.communityId)
   $scope.nbrMembre = CommunityService.getNbrMember($stateParams.communityId);
   $scope.animator = CommunityService.getAnimator(community.communityManagerId);
-  console.log(community);
-    console.log("cId :" + $stateParams.communityId);
+  $scope.labelisateur = CommunityService.getLabelisateur(community.labelisateur);
+  $scope.admin = CommunityService.getAdmin(community.adminId);
     if($stateParams.communityId == "") {
         $stateParams.communityId = 1;
     }
@@ -15,5 +16,8 @@ angular.module('communities.controllers', ['ngRoute'])
     $scope.goBack = function() {
         $ionicHistory.goBack();
     };
+    $scope.remove = function(id){
+        CommunityService.removeMember(id, $stateParams.communityId);
+    }
 
 })
